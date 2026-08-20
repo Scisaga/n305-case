@@ -80,6 +80,14 @@
 
 08～11 都是从 +Z 方向拍摄的局部测量照片，不是新增的独立表面。
 
+### 第三方外观参考
+
+| 本地副本 | 原始来源 | 用途与限制 |
+| --- | --- | --- |
+| [external/gmktec-g3-n100-fan-side-delightly-linux.jpg](./external/gmktec-g3-n100-fan-side-delightly-linux.jpg) | [Delightly Linux：GMKtec G3 – Fun While It Lasted](https://delightlylinux.wordpress.com/2025/07/24/gmktec-g3-fun-while-it-lasted/) · [原图](https://delightlylinux.wordpress.com/wp-content/uploads/2025/07/g3_rip05.jpg) | GMKtec G3 **N100** 版本主板的风扇/鳍片侧外观参考；不是本项目 N305 的尺寸标定证据，不进入像素测量或 CAD 参数源。 |
+
+本地副本保持原图 `976 × 549` JPEG，SHA-256 为 `a1707353513bc608e8bfbca7035629bb3766b3975cc5d1438e5a57a8070ad939`。来源页面未展示明确的开放再许可条款，因此 README 必须保留来源链接和第三方属性；若来源方提出要求，应删除本地副本并恢复为外链展示。
+
 ## 4. Z 向堆叠关系
 
 从 +Z 到 -Z，主板组件大致按以下顺序排列：

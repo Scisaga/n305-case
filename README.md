@@ -6,6 +6,14 @@
 
 如果你手上也有这块主板，可以直接下载模型试装，也可以基于主板参考设计自己的外壳。尺寸反馈、接口照片和结构改进都很有价值。
 
+<p align="center">
+  <a href="https://delightlylinux.wordpress.com/2025/07/24/gmktec-g3-fun-while-it-lasted/">
+    <img src="pics/external/gmktec-g3-n100-fan-side-delightly-linux.jpg" width="760" alt="GMKtec G3 主板的涡轮风扇与鳍片散热器一侧">
+  </a>
+</p>
+
+_外观参考：GMKtec G3 N100 版本主板的涡轮风扇与鳍片散热器一侧。图片来自 [Delightly Linux 原文](https://delightlylinux.wordpress.com/2025/07/24/gmktec-g3-fun-while-it-lasted/)；它与本项目重建对象布局相近，但不是本项目 N305 尺寸标定证据。机械尺寸仍以 `pics/` 中的用户实拍和卡尺数据为准。_
+
 [![N305 V2 外壳装配与爆炸预览](previews/enclosure/enclosure-assembly-and-exploded.png)](exports/enclosure/v2-prototype/n305_v2_enclosure_assembly.stl)
 
 _点击图片可在 GitHub 中打开 STL 交互预览；装配 STL 只用于检查，打印请使用独立的上壳和下壳文件。_
