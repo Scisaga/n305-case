@@ -1,0 +1,203 @@
+{
+  "release_id": "v2-prototype-2026-08-21-ribbed",
+  "designation": "fit-check prototype; not final-production CAD",
+  "checks": {
+    "upper_and_lower_are_single_valid_solids": true,
+    "assembly_contains_two_solids": true,
+    "upper_lower_have_zero_volume_overlap": true,
+    "shells_have_zero_volume_overlap_with_pcb": true,
+    "04_and_06_remain_single_wall_solids": true,
+    "two_integral_three_face_parts_preserved": true,
+    "only_four_original_mount_axes": true,
+    "top_and_bottom_are_exactly_1p2mm": true,
+    "nominal_aperture_coverage_has_no_failures": true,
+    "original_button_is_reused_not_invented": true,
+    "reinforcement_ribs_are_fully_fused_and_collision_free": true,
+    "step_roundtrip_matches_source_solids_and_volume": true,
+    "stl_meshes_are_parseable_and_nonempty": true,
+    "all_six_cad_outputs_exist": true
+  },
+  "all_checks_pass": true,
+  "source_shape_stats": {
+    "upper_shell": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 24131.071,
+      "bounds_mm": {
+        "x": [
+          -53.8,
+          52.8
+        ],
+        "y": [
+          -54.75,
+          54.75
+        ],
+        "z": [
+          -10.3,
+          16.5
+        ]
+      },
+      "size_mm": [
+        106.6,
+        109.5,
+        26.8
+      ]
+    },
+    "lower_shell": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 23021.64,
+      "bounds_mm": {
+        "x": [
+          -53.8,
+          52.8
+        ],
+        "y": [
+          -54.75,
+          54.75
+        ],
+        "z": [
+          -11.5,
+          15.3
+        ]
+      },
+      "size_mm": [
+        106.6,
+        109.5,
+        26.8
+      ]
+    },
+    "enclosure_assembly": {
+      "valid": true,
+      "solids": 2,
+      "volume_mm3": 47152.711,
+      "bounds_mm": {
+        "x": [
+          -53.8,
+          52.8
+        ],
+        "y": [
+          -54.75,
+          54.75
+        ],
+        "z": [
+          -11.5,
+          16.5
+        ]
+      },
+      "size_mm": [
+        106.6,
+        109.5,
+        28.0
+      ]
+    }
+  },
+  "step_roundtrip_stats": {
+    "upper_shell": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 24131.071,
+      "bounds_mm": {
+        "x": [
+          -53.8,
+          52.8
+        ],
+        "y": [
+          -54.75,
+          54.75
+        ],
+        "z": [
+          -10.3,
+          16.5
+        ]
+      },
+      "size_mm": [
+        106.6,
+        109.5,
+        26.8
+      ]
+    },
+    "lower_shell": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 23021.64,
+      "bounds_mm": {
+        "x": [
+          -53.8,
+          52.8
+        ],
+        "y": [
+          -54.75,
+          54.75
+        ],
+        "z": [
+          -11.5,
+          15.3
+        ]
+      },
+      "size_mm": [
+        106.6,
+        109.5,
+        26.8
+      ]
+    },
+    "enclosure_assembly": {
+      "valid": true,
+      "solids": 2,
+      "volume_mm3": 47152.711,
+      "bounds_mm": {
+        "x": [
+          -53.8,
+          52.8
+        ],
+        "y": [
+          -54.75,
+          54.75
+        ],
+        "z": [
+          -11.5,
+          16.5
+        ]
+      },
+      "size_mm": [
+        106.6,
+        109.5,
+        28.0
+      ]
+    }
+  },
+  "stl_mesh_stats": {
+    "upper_shell": {
+      "format": "binary",
+      "triangles": 5944,
+      "bytes": 297284
+    },
+    "lower_shell": {
+      "format": "binary",
+      "triangles": 6004,
+      "bytes": 300284
+    },
+    "enclosure_assembly": {
+      "format": "binary",
+      "triangles": 11948,
+      "bytes": 597484
+    }
+  },
+  "upper_lower_intersection_volume_mm3": 0.0,
+  "upper_pcb_intersection_volume_mm3": 0.0,
+  "lower_pcb_intersection_volume_mm3": 0.0,
+  "reinforcement": {
+    "rib_width_mm": 1.5,
+    "rib_height_mm": 0.8,
+    "review_clearance_mm": 1.0,
+    "top_ribs_vs_cooling_mm3": 0.0,
+    "top_ribs_vs_complete_motherboard_mm3": 0.0,
+    "bottom_ribs_vs_dual_usb_mm3": 0.0,
+    "bottom_ribs_vs_complete_motherboard_mm3": 0.0
+  },
+  "nominal_aperture_coverage_failures": [],
+  "aperture_coverage_not_evaluated": [
+    "04:hdmi_1",
+    "04:hdmi_3"
+  ]
+}

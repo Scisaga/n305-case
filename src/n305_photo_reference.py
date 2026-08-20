@@ -112,10 +112,11 @@ CASE_06_SOURCE = "pics/机箱盒子06.jpg"
 CASE_06_CROP_PX = (1050, 1500, 3300, 2050)
 
 # Exterior-photo traces at the full 4096 x 3072 source resolution.  The two
-# USB openings deliberately retain their separate vertical positions and
-# slight perspective skew; neither opening is projected onto a shared PCB
-# baseline.  ``vertices_px`` are the intersections of the four straight edge
-# runs before applying the photographed rounded corners.
+# USB openings retain their raw pixel positions and perspective skew only as
+# photographic evidence.  The mechanical reference normalizes the identical,
+# same-datum connectors to one shared Z center.  ``vertices_px`` are the
+# intersections of the four straight edge runs before applying the
+# photographed rounded corners.
 CASE_06_PHOTO_TRACES = (
     {
         "name": "usb_left",

@@ -84,17 +84,22 @@ FACE_04_APERTURES = (
 
 
 # Exterior 06 view reads from screen left to right as 05 -> 07.  The two USB
-# apertures are true horizontal rounded rectangles.  Their independently
-# calibrated center heights differ by 0.10 mm; that does not tilt either cut.
+# apertures are identical parts mounted on the same PCB datum, so they share
+# one mechanical Z center.  The apparent height difference in the oblique case
+# photograph is perspective/parallax evidence only and must not propagate into
+# the orthographic panel or enclosure geometry.  -3.14 mm preserves the mean
+# of the superseded photo-derived estimates (-3.09/-3.19 mm).
+FACE_06_USB_CENTER_Z_MM = -3.14
+
 FACE_06_APERTURES = (
     PanelApertureReference(
-        "usb_05", "06", -15.25, -3.09, "roundrect", 12.8, 5.5,
-        "user measured", "03 plan + 06 measured side calibration",
+        "usb_05", "06", -15.25, FACE_06_USB_CENTER_Z_MM, "roundrect", 12.8, 5.5,
+        "user measured size; shared-Z photo inference", "03 plan + 06 shared component datum",
         corner_radius_mm=0.7,
     ),
     PanelApertureReference(
-        "usb_07", "06", +4.75, -3.19, "roundrect", 12.8, 5.5,
-        "user measured", "03 plan + 06 measured side calibration",
+        "usb_07", "06", +4.75, FACE_06_USB_CENTER_Z_MM, "roundrect", 12.8, 5.5,
+        "user measured size; shared-Z photo inference", "03 plan + 06 shared component datum",
         corner_radius_mm=0.7,
     ),
     PanelApertureReference(
@@ -109,4 +114,3 @@ FACE_APERTURES = {
     "04": FACE_04_APERTURES,
     "06": FACE_06_APERTURES,
 }
-

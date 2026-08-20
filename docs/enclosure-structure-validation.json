@@ -1,0 +1,106 @@
+{
+  "scope": "enclosure structure and V2 prototype-source validation",
+  "checks": {
+    "face_ownership_is_two_integral_three_face_shells": true,
+    "upper_and_lower_are_each_one_fused_solid": true,
+    "top_and_bottom_are_exactly_1p2mm": true,
+    "outer_body_z_is_28p0_without_extra_fan_gap": true,
+    "rounded_plan_corners_are_present": true,
+    "rounded_corner_midwall_has_no_geometric_gap": true,
+    "each_rounded_corner_is_wholly_owned_by_one_shell": true,
+    "pcb_plan_has_reviewed_face_clearances": true,
+    "original_case_04_06_inner_span_matches_user_measurement": true,
+    "05_07_use_compact_0p2mm_fit_allowance_not_original_extra_space": true,
+    "side_wall_is_user_measured_1p8mm": true,
+    "face_06_inner_wall_uses_usb_front_plane": true,
+    "connector_front_span_closes_measured_103mm_inner_width": true,
+    "button_axial_stack_is_wall_plus_recessed_switch_gap": true,
+    "pcb_plan_is_fully_contained_by_inner_cavity": true,
+    "pcb_plan_is_fully_contained_by_outer_enclosure_plan": true,
+    "outer_plan_is_exact_constant_thickness_offset_of_inner_cavity": true,
+    "seam_is_one_closed_six_segment_path": true,
+    "nominal_seam_has_no_unreviewed_gap": true,
+    "only_four_original_pcb_axes_used": true,
+    "upper_posts_end_flat_at_pcb_top_without_locator_noses": true,
+    "lower_sleeves_end_at_pcb_bottom": true,
+    "all_face_and_post_review_shapes_valid": true,
+    "04_and_06_are_each_continuous_planar_wall_solids_after_openings": true,
+    "all_cutters_fully_remove_panel_material": true,
+    "clamp_posts_clear_current_component_and_keepout_models": true,
+    "all_six_faces_have_zero_volume_overlap_with_pcb_body": true,
+    "board_switch_remains_behind_face_06_inner_wall": true,
+    "non_interface_faces_clear_current_motherboard_model": true,
+    "05_and_07_have_no_apertures": true,
+    "v2_prototype_step_stl_complete": true
+  },
+  "internal_structure_checks_pass": true,
+  "nominal_aperture_coverage_failures": [],
+  "aperture_coverage_not_evaluated": [
+    "04:hdmi_1",
+    "04:hdmi_3"
+  ],
+  "review_gate": "V2 fit-check prototype authorized and generated; provisional parameters prevent final-production designation",
+  "aperture_cutter_residuals_mm3": {
+    "04:dc": 0.0,
+    "04:hdmi_1": 0.0,
+    "04:headphone": 0.0,
+    "04:rj45": 0.0,
+    "04:stack_dual_usb": 0.0,
+    "04:hdmi_3": 0.0,
+    "06:usb_05": 0.0,
+    "06:usb_07": 0.0,
+    "06:power_switch": 0.0,
+    "04:fin_exhaust": 0.0
+  },
+  "part_interference": {
+    "upper_posts_vs_connectors_mm3": 0.0,
+    "upper_posts_vs_cooling_mm3": 0.0,
+    "lower_posts_vs_connectors_mm3": 0.0,
+    "lower_posts_vs_underside_keepouts_mm3": 0.0,
+    "six_faces_vs_motherboard_mm3": {
+      "top": 0.0,
+      "bottom": 0.0,
+      "04": 0.0,
+      "05": 0.0,
+      "06": 0.0,
+      "07": 0.0
+    },
+    "six_faces_vs_pcb_only_mm3": {
+      "top": 0.0,
+      "bottom": 0.0,
+      "04": 0.0,
+      "05": 0.0,
+      "06": 0.0,
+      "07": 0.0
+    }
+  },
+  "interface_body_proxy_note": "Faces 04/06 are outward-offset continuous planar walls. Full connector-body boxes remain conservative hidden proxies; reported proxy intersections cannot enlarge or reshape the reviewed exterior apertures. PCB containment, through-cut apertures and qualified front-profile coverage are the pass criteria.",
+  "plan_fit_validation": {
+    "pcb_volume_outside_inner_cavity_mm3": 0.0,
+    "pcb_volume_outside_outer_plan_mm3": 0.0,
+    "exact_offset_volume_missing_from_outer_plan_mm3": 0.0,
+    "outer_plan_volume_excess_over_exact_offset_mm3": 0.0,
+    "straight_wall_thickness_mm": 1.8,
+    "corner_radial_wall_thickness_mm": 1.8
+  },
+  "rounded_corner_midwall_missing_mm3": {
+    "06_07": 0.0,
+    "04_05": 0.0,
+    "06_05": 0.0,
+    "04_07": 0.0
+  },
+  "rounded_corner_owner_missing_mm3": {
+    "06_07": 0.0,
+    "04_05": 0.0,
+    "06_05": 0.0,
+    "04_07": 0.0
+  },
+  "detected_enclosure_cad_files": [
+    "exports/enclosure/v2-prototype/n305_v2_enclosure_assembly.step",
+    "exports/enclosure/v2-prototype/n305_v2_enclosure_assembly.stl",
+    "exports/enclosure/v2-prototype/n305_v2_lower_shell.step",
+    "exports/enclosure/v2-prototype/n305_v2_lower_shell.stl",
+    "exports/enclosure/v2-prototype/n305_v2_upper_shell.step",
+    "exports/enclosure/v2-prototype/n305_v2_upper_shell.stl"
+  ]
+}

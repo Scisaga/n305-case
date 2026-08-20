@@ -262,7 +262,7 @@ def calibrate_original_case(
         )
     if face == "06":
         result["position_semantics"] = (
-            "USB openings retain separate photo-plane vertical positions; no common PCB baseline"
+            "raw USB traces retain their photographed pixel positions; mechanical CAD uses one shared Z datum for the identical same-layer connectors"
         )
     return result
 

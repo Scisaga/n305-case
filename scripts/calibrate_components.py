@@ -18,10 +18,11 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 from n305_mainboard_reference import (  # noqa: E402
-    ASSEMBLY_X_ENVELOPE_MM,
     FAN_CENTER_XY_MM,
     FAN_PROFILE_UNCERTAINTY_MM,
     FAN_SHELL_PROFILE_XY_MM,
+    PCB_X_MM,
+    PCB_Y_MM,
 )
 from n305_photo_reference import (  # noqa: E402
     BOARD_01_BLOWER_OUTLINE_PX,
@@ -135,7 +136,14 @@ def main() -> None:
         "fan_center_xy_mm_model": list(FAN_CENTER_XY_MM),
         "profile_uncertainty_mm": FAN_PROFILE_UNCERTAINTY_MM,
         "model_rounding_max_error_mm": round(max(point_errors), 4),
-        "measured_04_06_assembly_envelope_mm": ASSEMBLY_X_ENVELOPE_MM,
+        "caliper_measurements_mm": {
+            "photo_01_pcb_width_x": PCB_X_MM,
+            "photo_02_pcb_depth_y": PCB_Y_MM,
+        },
+        "caliper_scope_note": (
+            "Photos 01/02 clamp the PCB plan near its corner regions; they do not "
+            "measure a symmetric connector-front envelope."
+        ),
         "overlay": "previews/calibration/01-blower-profile-trace.png",
         "warning": "the CAD model reads the reviewed millimetre profile, never these PNG pixels",
     }

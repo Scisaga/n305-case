@@ -19,15 +19,17 @@ if str(SRC) not in sys.path:
 
 from n305_mainboard_reference import (  # noqa: E402
     ALL_CONNECTORS,
-    ASSEMBLY_X_ENVELOPE_MM,
     BARE_ASSEMBLY_Z_MM,
     FACE_04_CONNECTORS,
+    FACE_04_MAX_PROJECTION_MM,
+    FACE_06_USB_PROJECTION_MM,
     FAN_BLADE_COUNT,
     FAN_CENTER_XY_MM,
     FAN_INLET_D_MM,
     FAN_PROFILE_UNCERTAINTY_MM,
     FAN_SHELL_PROFILE_XY_MM,
     FAN_TOP_Z_MM,
+    FIN_STACK_X_MM,
     LOWEST_Z_MM,
     MOUNT_HOLE_D_MM,
     MOUNT_HOLE_POSITION_UNCERTAINTY_MM,
@@ -39,6 +41,10 @@ from n305_mainboard_reference import (  # noqa: E402
     PCB_Y_MM,
     SWITCH_CENTER_Y_MM,
     SWITCH_CENTER_Z_MM,
+    SWITCH_ACTUATOR_TIP_X_MM,
+    SWITCH_FACE_X_MM,
+    SWITCH_PLAN_POSITION_UNCERTAINTY_MM,
+    SWITCH_RECESS_BEHIND_USB_FRONT_MM,
     build_geometry,
     rounded_plate_xy,
 )
@@ -239,6 +245,8 @@ def build_validation(geometry: dict[str, cq.Shape]) -> dict[str, object]:
         PCB_TOP_Z_MM - 0.02,
     ).val()
     motherboard_bounds = motherboard.BoundingBox()
+    connector_bounds = geometry["connectors"].BoundingBox()
+    fin_bounds = geometry["fins"].BoundingBox()
     face_04_names = tuple(item.name for item in FACE_APERTURES["04"])
     face_06_usb_apertures = tuple(
         item for item in FACE_APERTURES["06"] if item.name.startswith("usb_")
@@ -314,14 +322,18 @@ def build_validation(geometry: dict[str, cq.Shape]) -> dict[str, object]:
         },
         "plan_envelope": {
             "pcb_x_mm": PCB_X_MM,
-            "assembly_04_06_mm": ASSEMBLY_X_ENVELOPE_MM,
-            "nominal_projection_each_face_mm": round(
-                (ASSEMBLY_X_ENVELOPE_MM - PCB_X_MM) / 2.0, 3
-            ),
+            "face_04_max_connector_projection_mm": FACE_04_MAX_PROJECTION_MM,
+            "face_06_usb_projection_mm": FACE_06_USB_PROJECTION_MM,
+            "fin_projection_beyond_pcb_mm": round(-PCB_X_MM / 2.0 - fin_bounds.xmin, 3),
+            "connector_bounds_x_mm": [
+                round(connector_bounds.xmin, 3),
+                round(connector_bounds.xmax, 3),
+            ],
             "generated_bounds_x_mm": [
                 round(motherboard_bounds.xmin, 3),
                 round(motherboard_bounds.xmax, 3),
             ],
+            "note": "asymmetric per-component references; no symmetric total-envelope split",
         },
         "z_stack": {
             "lowest_z_mm": LOWEST_Z_MM,
@@ -341,11 +353,27 @@ def build_validation(geometry: dict[str, cq.Shape]) -> dict[str, object]:
             "blade_count": FAN_BLADE_COUNT,
             "two_hole_top_bar": "not modeled; 05 side view does not support it above the blower",
         },
-        "interfaces": [asdict(item) for item in ALL_CONNECTORS],
+        "interfaces": [
+            {
+                **asdict(item),
+                "front_x_mm": round(
+                    (-PCB_X_MM / 2.0 - item.front_projection_mm)
+                    if item.face == "04"
+                    else (+PCB_X_MM / 2.0 + item.front_projection_mm),
+                    3,
+                ),
+            }
+            for item in ALL_CONNECTORS
+        ],
         "board_switch": {
             "face": "06",
             "center_y_mm": SWITCH_CENTER_Y_MM,
             "center_z_mm": SWITCH_CENTER_Z_MM,
+            "body_face_x_mm": SWITCH_FACE_X_MM,
+            "actuator_tip_x_mm": SWITCH_ACTUATOR_TIP_X_MM,
+            "recess_behind_usb_front_mm": SWITCH_RECESS_BEHIND_USB_FRONT_MM,
+            "plan_position_uncertainty_mm": SWITCH_PLAN_POSITION_UNCERTAINTY_MM,
+            "source": "photo 03 plan ordering; USB front is the outer datum and the switch/local PCB are recessed",
         },
         "checks": {
             "pcb_bounds_match_measured": all(
@@ -356,10 +384,24 @@ def build_validation(geometry: dict[str, cq.Shape]) -> dict[str, object]:
                 )
             ),
             "mount_hole_count_is_four": len(MOUNT_HOLES) == 4,
-            "assembly_x_envelope_matches_103p4": abs(
-                motherboard_bounds.xlen - ASSEMBLY_X_ENVELOPE_MM
-            )
-            <= 0.02,
+            "face_04_stack_usb_projection_matches_user_rough_2mm": all(
+                abs(item.front_projection_mm - FACE_04_MAX_PROJECTION_MM) <= 1e-9
+                for item in ALL_CONNECTORS
+                if item.name.startswith("stack_usb_")
+            ),
+            "face_06_usb_projection_matches_user_rough_1mm": all(
+                abs(item.front_projection_mm - FACE_06_USB_PROJECTION_MM) <= 1e-9
+                for item in ALL_CONNECTORS
+                if item.face == "06"
+            ),
+            "fin_stack_is_flush_with_face_04_pcb_edge": (
+                abs(fin_bounds.xmin + PCB_X_MM / 2.0) <= 0.01
+                and abs(fin_bounds.xlen - FIN_STACK_X_MM) <= 0.01
+            ),
+            "connector_fronts_are_not_forced_to_symmetric_planes": (
+                abs(connector_bounds.xmin + PCB_X_MM / 2.0 + FACE_04_MAX_PROJECTION_MM) <= 0.01
+                and abs(connector_bounds.xmax - PCB_X_MM / 2.0 - FACE_06_USB_PROJECTION_MM) <= 0.01
+            ),
             "bare_assembly_thickness_matches_25p6": abs(motherboard_bounds.zlen - 25.6) <= 0.02,
             "cooling_contact_path_complete": all_contacts_pass,
             "blower_is_asymmetric_photo_trace": len(FAN_SHELL_PROFILE_XY_MM) >= 12
@@ -386,6 +428,16 @@ def build_validation(geometry: dict[str, cq.Shape]) -> dict[str, object]:
                 item.face != "06"
                 or (item.nose_shape == "roundrect" and item.nose_width_mm > item.nose_height_mm)
                 for item in ALL_CONNECTORS
+            ),
+            "face_06_switch_is_recessed_behind_usb_front": (
+                abs(
+                    (PCB_X_MM / 2.0 + FACE_06_USB_PROJECTION_MM)
+                    - SWITCH_ACTUATOR_TIP_X_MM
+                    - SWITCH_RECESS_BEHIND_USB_FRONT_MM
+                )
+                <= 1e-9
+                and SWITCH_ACTUATOR_TIP_X_MM
+                < PCB_X_MM / 2.0 + FACE_06_USB_PROJECTION_MM
             ),
             "enclosure_geometry_generated": False,
         },

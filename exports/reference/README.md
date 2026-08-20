@@ -9,7 +9,7 @@
 - `n305_connectors_and_switch.step/.stl`：04/06 接口实体和板载电源开关。
 - `n305_cooling_assembly.step/.stl`：冷板支撑、风扇托板、照片描摩蜗壳、32 片叶轮、热桥和鳍片；不含缺少侧视高度证据的双孔长条。
 
-这些文件是用于机壳设计的物理参考，不是厂商制造模型。连接器隐藏壳体和散热组件细节含照片估计。
+这些文件是用于机壳设计的物理参考，不是厂商制造模型。连接器隐藏壳体和散热组件细节含照片估计。接口 X 向前沿按对象保存：04 双 USB 约突出 PCB 2.0 mm、06 USB 约突出 1.0 mm、04 鳍片与 PCB 边齐平；04 其余接口当前 1.0 mm 前伸仅是 provisional 外观代理，不是实测值。
 
 ## clearances
 
@@ -21,7 +21,7 @@
 
 ## validation.json
 
-记录数据源、PCB/孔位、Z 包络、接口参数、各零件边界和散热接触检查。当前检查必须全部通过，且 `enclosure_geometry_generated` 必须为 `false`。
+记录数据源、PCB/孔位、Z 包络、接口参数、各零件边界和散热接触检查。当前检查必须全部通过，且 `enclosure_geometry_generated` 必须为 `false`，表示本主板参考包不混入外壳实体；独立的 V2 外壳位于 `exports/enclosure/v2-prototype/`。
 
 重新生成：
 

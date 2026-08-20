@@ -162,7 +162,11 @@
   ],
   "profile_uncertainty_mm": 1.0,
   "model_rounding_max_error_mm": 0.0059,
-  "measured_04_06_assembly_envelope_mm": 103.4,
+  "caliper_measurements_mm": {
+    "photo_01_pcb_width_x": 100.0,
+    "photo_02_pcb_depth_y": 105.5
+  },
+  "caliper_scope_note": "Photos 01/02 clamp the PCB plan near its corner regions; they do not measure a symmetric connector-front envelope.",
   "overlay": "previews/calibration/01-blower-profile-trace.png",
   "warning": "the CAD model reads the reviewed millimetre profile, never these PNG pixels"
 }

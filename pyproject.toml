@@ -17,4 +17,4 @@ dependencies = [
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-py-modules = ["n305_mainboard_reference", "n305_panel_reference", "n305_photo_reference"]
+py-modules = ["n305_enclosure_structure", "n305_mainboard_reference", "n305_panel_reference", "n305_photo_reference"]

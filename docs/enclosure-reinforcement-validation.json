@@ -1,0 +1,170 @@
+{
+  "scope": "approved internal reinforcement; included in regenerated V2 STEP/STL",
+  "status": "approved and applied to V2 CAD",
+  "parameters_mm": {
+    "base_top_plate": 1.2,
+    "base_bottom_plate": 1.2,
+    "rib_width": 1.5,
+    "rib_height": 0.8,
+    "review_clearance": 1.0
+  },
+  "top_segments": [
+    {
+      "name": "top_07_cross",
+      "start_xy_mm": [
+        -52.0,
+        45.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        45.0
+      ]
+    },
+    {
+      "name": "top_06_spine",
+      "start_xy_mm": [
+        28.5,
+        -52.95
+      ],
+      "end_xy_mm": [
+        28.5,
+        52.95
+      ]
+    },
+    {
+      "name": "top_fan_upper_bypass",
+      "start_xy_mm": [
+        -26.0,
+        24.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        24.0
+      ]
+    },
+    {
+      "name": "top_fan_lower_bypass",
+      "start_xy_mm": [
+        -26.0,
+        -37.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        -37.0
+      ]
+    },
+    {
+      "name": "top_fin_upper_return",
+      "start_xy_mm": [
+        -25.5,
+        24.0
+      ],
+      "end_xy_mm": [
+        -25.5,
+        45.0
+      ]
+    },
+    {
+      "name": "top_fin_lower_return",
+      "start_xy_mm": [
+        -25.5,
+        -52.95
+      ],
+      "end_xy_mm": [
+        -25.5,
+        -37.0
+      ]
+    }
+  ],
+  "bottom_segments": [
+    {
+      "name": "bottom_04_spine",
+      "start_xy_mm": [
+        -28.5,
+        -52.95
+      ],
+      "end_xy_mm": [
+        -28.5,
+        52.95
+      ]
+    },
+    {
+      "name": "bottom_06_spine",
+      "start_xy_mm": [
+        28.5,
+        -52.95
+      ],
+      "end_xy_mm": [
+        28.5,
+        52.95
+      ]
+    },
+    {
+      "name": "bottom_05_edge",
+      "start_xy_mm": [
+        -52.0,
+        -47.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        -47.0
+      ]
+    },
+    {
+      "name": "bottom_usb_lower_bypass",
+      "start_xy_mm": [
+        -52.0,
+        -30.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        -30.0
+      ]
+    },
+    {
+      "name": "bottom_usb_upper_bypass",
+      "start_xy_mm": [
+        -52.0,
+        25.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        25.0
+      ]
+    },
+    {
+      "name": "bottom_07_edge",
+      "start_xy_mm": [
+        -52.0,
+        47.0
+      ],
+      "end_xy_mm": [
+        51.0,
+        47.0
+      ]
+    }
+  ],
+  "metrics": {
+    "top_ribs_vs_cooling_mm3": 0.0,
+    "top_ribs_vs_cooling_envelope_mm3": 0.0,
+    "top_ribs_vs_motherboard_mm3": 0.0,
+    "bottom_ribs_vs_dual_usb_mm3": 0.0,
+    "bottom_ribs_vs_usb_envelope_mm3": 0.0,
+    "bottom_ribs_vs_motherboard_mm3": 0.0,
+    "bottom_ribs_vs_underside_keepouts_mm3": 0.0,
+    "top_ribs_to_cooling_mm": 1.75,
+    "bottom_ribs_to_dual_usb_mm": 6.75
+  },
+  "checks": {
+    "reinforcement_status_is_approved": true,
+    "top_ribs_clear_cooling_solids": true,
+    "top_ribs_clear_1mm_cooling_review_envelope": true,
+    "top_ribs_clear_complete_motherboard": true,
+    "bottom_ribs_clear_dual_usb": true,
+    "bottom_ribs_clear_1mm_dual_usb_review_envelope": true,
+    "bottom_ribs_clear_complete_motherboard": true,
+    "bottom_ribs_clear_underside_keepouts": true,
+    "mount_hole_count_is_four": true
+  },
+  "all_checks_pass": true
+}

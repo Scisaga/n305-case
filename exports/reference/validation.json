@@ -42,12 +42,18 @@
   },
   "plan_envelope": {
     "pcb_x_mm": 100.0,
-    "assembly_04_06_mm": 103.4,
-    "nominal_projection_each_face_mm": 1.7,
+    "face_04_max_connector_projection_mm": 2.0,
+    "face_06_usb_projection_mm": 1.0,
+    "fin_projection_beyond_pcb_mm": 0.0,
+    "connector_bounds_x_mm": [
+      -52.0,
+      51.0
+    ],
     "generated_bounds_x_mm": [
-      -51.7,
-      51.7
-    ]
+      -52.0,
+      51.0
+    ],
+    "note": "asymmetric per-component references; no symmetric total-envelope split"
   },
   "z_stack": {
     "lowest_z_mm": -10.25,
@@ -145,7 +151,10 @@
       "body_depth_mm": 13.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.7,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "provisional slight projection; bounded by user rough 2.0 mm maximum",
+      "front_x_mm": -51.0
     },
     {
       "name": "hdmi_1",
@@ -160,7 +169,10 @@
       "body_depth_mm": 12.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.6,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "provisional slight projection; bounded by user rough 2.0 mm maximum",
+      "front_x_mm": -51.0
     },
     {
       "name": "headphone",
@@ -175,7 +187,10 @@
       "body_depth_mm": 11.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.7,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "provisional slight projection; bounded by user rough 2.0 mm maximum",
+      "front_x_mm": -51.0
     },
     {
       "name": "rj45",
@@ -190,7 +205,10 @@
       "body_depth_mm": 20.0,
       "nose_center_z_offset_mm": 0.85,
       "nose_corner_radius_mm": 0.8,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "provisional slight projection; bounded by user rough 2.0 mm maximum",
+      "front_x_mm": -51.0
     },
     {
       "name": "stack_usb_upper",
@@ -205,7 +223,10 @@
       "body_depth_mm": 16.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.6,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 2.0,
+      "projection_confidence": "user rough measurement: about 2.0 mm; maximum on face 04",
+      "front_x_mm": -52.0
     },
     {
       "name": "stack_usb_lower",
@@ -220,7 +241,10 @@
       "body_depth_mm": 16.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.6,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 2.0,
+      "projection_confidence": "user rough measurement: about 2.0 mm; maximum on face 04",
+      "front_x_mm": -52.0
     },
     {
       "name": "hdmi_3",
@@ -235,13 +259,16 @@
       "body_depth_mm": 12.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.6,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "provisional slight projection; bounded by user rough 2.0 mm maximum",
+      "front_x_mm": -51.0
     },
     {
       "name": "usb_05",
       "face": "06",
       "center_y_mm": -15.25,
-      "body_center_z_mm": -3.09,
+      "body_center_z_mm": -3.14,
       "nose_shape": "roundrect",
       "nose_width_mm": 12.0,
       "nose_height_mm": 4.6,
@@ -250,13 +277,16 @@
       "body_depth_mm": 16.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.6,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "user rough measurement: about 1.0 mm",
+      "front_x_mm": 51.0
     },
     {
       "name": "usb_07",
       "face": "06",
       "center_y_mm": 4.75,
-      "body_center_z_mm": -3.19,
+      "body_center_z_mm": -3.14,
       "nose_shape": "roundrect",
       "nose_width_mm": 12.0,
       "nose_height_mm": 4.6,
@@ -265,18 +295,29 @@
       "body_depth_mm": 16.0,
       "nose_center_z_offset_mm": 0.0,
       "nose_corner_radius_mm": 0.6,
-      "confidence": "photo-estimated body; PCB-aligned center"
+      "confidence": "photo-estimated body; PCB-aligned center",
+      "front_projection_mm": 1.0,
+      "projection_confidence": "user rough measurement: about 1.0 mm",
+      "front_x_mm": 51.0
     }
   ],
   "board_switch": {
     "face": "06",
     "center_y_mm": 29.5,
-    "center_z_mm": -4.2
+    "center_z_mm": -4.2,
+    "body_face_x_mm": 49.099999999999994,
+    "actuator_tip_x_mm": 49.8,
+    "recess_behind_usb_front_mm": 1.2,
+    "plan_position_uncertainty_mm": 0.4,
+    "source": "photo 03 plan ordering; USB front is the outer datum and the switch/local PCB are recessed"
   },
   "checks": {
     "pcb_bounds_match_measured": true,
     "mount_hole_count_is_four": true,
-    "assembly_x_envelope_matches_103p4": true,
+    "face_04_stack_usb_projection_matches_user_rough_2mm": true,
+    "face_06_usb_projection_matches_user_rough_1mm": true,
+    "fin_stack_is_flush_with_face_04_pcb_edge": true,
+    "connector_fronts_are_not_forced_to_symmetric_planes": true,
     "bare_assembly_thickness_matches_25p6": true,
     "cooling_contact_path_complete": true,
     "blower_is_asymmetric_photo_trace": true,
@@ -285,6 +326,7 @@
     "face_04_order_and_semantics_preserved": true,
     "face_06_apertures_match_measured": true,
     "face_06_usb_profiles_horizontal": true,
+    "face_06_switch_is_recessed_behind_usb_front": true,
     "enclosure_geometry_generated": false
   },
   "contact_checks": {
@@ -297,7 +339,7 @@
     "deck_to_heat_bridge_distance_mm": 0.0,
     "deck_heat_bridge_overlap_mm3": 237.81962,
     "heat_bridge_to_fins_distance_mm": 0.0,
-    "heat_bridge_fins_overlap_mm3": 241.56325
+    "heat_bridge_fins_overlap_mm3": 337.065
   },
   "parts": {
     "pcb": {
@@ -328,8 +370,8 @@
       "volume_mm3": 14720.25,
       "bounds_mm": {
         "x": [
-          -51.7,
-          51.7
+          -52.0,
+          51.0
         ],
         "y": [
           -43.58,
@@ -341,7 +383,7 @@
         ]
       },
       "size_mm": [
-        103.4,
+        103.0,
         88.66,
         17.87
       ]
@@ -351,8 +393,8 @@
       "volume_mm3": 103.031,
       "bounds_mm": {
         "x": [
-          45.7,
-          51.4
+          44.1,
+          49.8
         ],
         "y": [
           27.25,
@@ -489,8 +531,8 @@
       "volume_mm3": 4795.56,
       "bounds_mm": {
         "x": [
-          -51.7,
-          -29.7
+          -50.0,
+          -28.0
         ],
         "y": [
           -42.35,
@@ -509,10 +551,10 @@
     },
     "cooling_assembly": {
       "solids": 67,
-      "volume_mm3": 20912.745,
+      "volume_mm3": 20912.727,
       "bounds_mm": {
         "x": [
-          -51.7,
+          -50.0,
           25.523
         ],
         "y": [
@@ -525,18 +567,18 @@
         ]
       },
       "size_mm": [
-        77.223,
+        75.523,
         84.7,
         13.8
       ]
     },
     "motherboard_assembly": {
       "solids": 78,
-      "volume_mm3": 51492.126,
+      "volume_mm3": 51492.111,
       "bounds_mm": {
         "x": [
-          -51.7,
-          51.7
+          -52.0,
+          51.0
         ],
         "y": [
           -52.75,
@@ -548,17 +590,17 @@
         ]
       },
       "size_mm": [
-        103.4,
+        103.0,
         105.5,
         25.6
       ]
     },
     "cooling_keepout": {
       "solids": 2,
-      "volume_mm3": 60824.059,
+      "volume_mm3": 60824.005,
       "bounds_mm": {
         "x": [
-          -51.7,
+          -50.0,
           25.523
         ],
         "y": [
@@ -571,7 +613,7 @@
         ]
       },
       "size_mm": [
-        77.223,
+        75.523,
         84.0,
         13.8
       ]

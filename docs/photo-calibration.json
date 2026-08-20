@@ -298,6 +298,6 @@
       }
     ],
     "overlay": "previews/calibration/original-case-06-1mm-grid.png",
-    "position_semantics": "USB openings retain separate photo-plane vertical positions; no common PCB baseline"
+    "position_semantics": "raw USB traces retain their photographed pixel positions; mechanical CAD uses one shared Z datum for the identical same-layer connectors"
   }
 }

@@ -38,12 +38,15 @@ MOUNT_HOLES = (
     ("05_04", -45.107, -48.959),
 )
 
-# Existing measured plan envelope is 103.4 mm in the 04--06 direction.  The
-# connector fronts therefore project only 1.7 mm beyond each 100 mm PCB edge;
-# the earlier +/-55 mm observation planes were never physical front planes.
-ASSEMBLY_X_ENVELOPE_MM = 103.4
-FACE_04_CONNECTOR_X_MM = -ASSEMBLY_X_ENVELOPE_MM / 2.0
-FACE_06_CONNECTOR_X_MM = +ASSEMBLY_X_ENVELOPE_MM / 2.0
+# Photos 01/02 measure the 100.0 x 105.5 mm PCB plan, not a symmetric
+# connector-front envelope.  Connector projection is therefore stored per
+# reference instead of being reconstructed by splitting one total span.
+# User rough measurements establish the two maxima currently needed by the
+# enclosure review.  Other 04 noses remain an explicit visual proxy bounded by
+# the 2.0 mm maximum; they must not be mistaken for individual measurements.
+FACE_04_OTHER_PROJECTION_MM = 1.0
+FACE_04_MAX_PROJECTION_MM = 2.0
+FACE_06_USB_PROJECTION_MM = 1.0
 
 FAN_CENTER_XY_MM = (-0.2, -3.45)
 FAN_INLET_D_MM = 33.5
@@ -71,7 +74,9 @@ FAN_HUB_D_MM = 20.5
 FAN_BLADE_COUNT = 32
 FIN_STACK_X_MM = 22.0
 FIN_STACK_Y_MM = 84.0
-FIN_STACK_CENTER_X_MM = -40.7
+# The 04-facing fin edge is flush with the PCB edge at X=-50.0.  With the
+# existing 22 mm reconstructed span the stack therefore occupies -50..-28.
+FIN_STACK_CENTER_X_MM = -PCB_X_MM / 2.0 + FIN_STACK_X_MM / 2.0
 FIN_STACK_CENTER_Y_MM = 0.0
 
 COOLING_DECK_BOTTOM_Z_MM = 9.55
@@ -99,6 +104,8 @@ class ConnectorReference:
     nose_center_z_offset_mm: float = 0.0
     nose_corner_radius_mm: float = 0.7
     confidence: str = "photo-estimated body; PCB-aligned center"
+    front_projection_mm: float = 0.0
+    projection_confidence: str = "unresolved"
 
 
 def _aperture(face: str, name: str):
@@ -106,18 +113,18 @@ def _aperture(face: str, name: str):
 
 
 FACE_04_CONNECTORS = (
-    ConnectorReference("dc", "04", _aperture("04", "dc").center_y_mm, -4.33, "circle", 5.5, 5.5, 10.5, 10.5, 13.0),
-    ConnectorReference("hdmi_1", "04", _aperture("04", "hdmi_1").center_y_mm, -5.02, "roundrect", 14.0, 4.8, 15.0, 6.4, 12.0, nose_corner_radius_mm=0.6),
-    ConnectorReference("headphone", "04", _aperture("04", "headphone").center_y_mm, +3.57, "circle", 5.0, 5.0, 8.0, 8.0, 11.0),
-    ConnectorReference("rj45", "04", _aperture("04", "rj45").center_y_mm, -3.55, "roundrect", 14.5, 8.3, 16.5, 13.5, 20.0, +0.85, 0.8),
-    ConnectorReference("stack_usb_upper", "04", _aperture("04", "stack_dual_usb").center_y_mm, +0.10, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6),
-    ConnectorReference("stack_usb_lower", "04", _aperture("04", "stack_dual_usb").center_y_mm, -7.04, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6),
-    ConnectorReference("hdmi_3", "04", _aperture("04", "hdmi_3").center_y_mm, -5.27, "roundrect", 14.0, 4.8, 15.0, 6.4, 12.0, nose_corner_radius_mm=0.6),
+    ConnectorReference("dc", "04", _aperture("04", "dc").center_y_mm, -4.33, "circle", 5.5, 5.5, 10.5, 10.5, 13.0, front_projection_mm=FACE_04_OTHER_PROJECTION_MM, projection_confidence="provisional slight projection; bounded by user rough 2.0 mm maximum"),
+    ConnectorReference("hdmi_1", "04", _aperture("04", "hdmi_1").center_y_mm, -5.02, "roundrect", 14.0, 4.8, 15.0, 6.4, 12.0, nose_corner_radius_mm=0.6, front_projection_mm=FACE_04_OTHER_PROJECTION_MM, projection_confidence="provisional slight projection; bounded by user rough 2.0 mm maximum"),
+    ConnectorReference("headphone", "04", _aperture("04", "headphone").center_y_mm, +3.57, "circle", 5.0, 5.0, 8.0, 8.0, 11.0, front_projection_mm=FACE_04_OTHER_PROJECTION_MM, projection_confidence="provisional slight projection; bounded by user rough 2.0 mm maximum"),
+    ConnectorReference("rj45", "04", _aperture("04", "rj45").center_y_mm, -3.55, "roundrect", 14.5, 8.3, 16.5, 13.5, 20.0, +0.85, 0.8, front_projection_mm=FACE_04_OTHER_PROJECTION_MM, projection_confidence="provisional slight projection; bounded by user rough 2.0 mm maximum"),
+    ConnectorReference("stack_usb_upper", "04", _aperture("04", "stack_dual_usb").center_y_mm, +0.10, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6, front_projection_mm=FACE_04_MAX_PROJECTION_MM, projection_confidence="user rough measurement: about 2.0 mm; maximum on face 04"),
+    ConnectorReference("stack_usb_lower", "04", _aperture("04", "stack_dual_usb").center_y_mm, -7.04, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6, front_projection_mm=FACE_04_MAX_PROJECTION_MM, projection_confidence="user rough measurement: about 2.0 mm; maximum on face 04"),
+    ConnectorReference("hdmi_3", "04", _aperture("04", "hdmi_3").center_y_mm, -5.27, "roundrect", 14.0, 4.8, 15.0, 6.4, 12.0, nose_corner_radius_mm=0.6, front_projection_mm=FACE_04_OTHER_PROJECTION_MM, projection_confidence="provisional slight projection; bounded by user rough 2.0 mm maximum"),
 )
 
 FACE_06_CONNECTORS = (
-    ConnectorReference("usb_05", "06", _aperture("06", "usb_05").center_y_mm, -3.09, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6),
-    ConnectorReference("usb_07", "06", _aperture("06", "usb_07").center_y_mm, -3.19, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6),
+    ConnectorReference("usb_05", "06", _aperture("06", "usb_05").center_y_mm, _aperture("06", "usb_05").center_z_mm, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6, front_projection_mm=FACE_06_USB_PROJECTION_MM, projection_confidence="user rough measurement: about 1.0 mm"),
+    ConnectorReference("usb_07", "06", _aperture("06", "usb_07").center_y_mm, _aperture("06", "usb_07").center_z_mm, "roundrect", 12.0, 4.6, 14.0, 6.5, 16.0, nose_corner_radius_mm=0.6, front_projection_mm=FACE_06_USB_PROJECTION_MM, projection_confidence="user rough measurement: about 1.0 mm"),
 )
 
 ALL_CONNECTORS = FACE_04_CONNECTORS + FACE_06_CONNECTORS
@@ -127,9 +134,22 @@ SWITCH_CENTER_Z_MM = _aperture("06", "power_switch").center_z_mm
 SWITCH_BODY_W_MM = 4.5
 SWITCH_BODY_H_MM = 4.5
 SWITCH_BODY_DEPTH_MM = 5.0
-SWITCH_FACE_X_MM = 50.7
 SWITCH_ACTUATOR_D_MM = 1.8
 SWITCH_ACTUATOR_PROJECTION_MM = 0.7
+# Photo 03 shows the USB metal fronts as the outer 06-face datum.  The switch
+# contact is about 1.2 mm farther inward, and the adjacent PCB outline steps
+# inward again.  This plan-view estimate is provisional (+/-0.4 mm), but its
+# ordering is reliable: USB front -> panel datum -> switch contact -> local PCB.
+# It replaces the invalid proxy that placed the switch actuator inside the wall
+# opening by measuring it from a fictitious straight X=50 PCB edge.
+SWITCH_RECESS_BEHIND_USB_FRONT_MM = 1.2
+SWITCH_PLAN_POSITION_UNCERTAINTY_MM = 0.4
+SWITCH_ACTUATOR_TIP_X_MM = (
+    PCB_X_MM / 2.0
+    + FACE_06_USB_PROJECTION_MM
+    - SWITCH_RECESS_BEHIND_USB_FRONT_MM
+)
+SWITCH_FACE_X_MM = SWITCH_ACTUATOR_TIP_X_MM - SWITCH_ACTUATOR_PROJECTION_MM
 
 
 def compound(parts: list[cq.Workplane | cq.Shape]) -> cq.Shape:
@@ -220,12 +240,17 @@ def make_pcb() -> cq.Shape:
 
 
 def make_connector(reference: ConnectorReference) -> cq.Shape:
+    front_x = (
+        -PCB_X_MM / 2.0 - reference.front_projection_mm
+        if reference.face == "04"
+        else +PCB_X_MM / 2.0 + reference.front_projection_mm
+    )
     if reference.face == "04":
-        body_x0 = FACE_04_CONNECTOR_X_MM
-        nose_x0 = FACE_04_CONNECTOR_X_MM
+        body_x0 = front_x
+        nose_x0 = front_x
     else:
-        body_x0 = FACE_06_CONNECTOR_X_MM - reference.body_depth_mm
-        nose_x0 = FACE_06_CONNECTOR_X_MM - 2.0
+        body_x0 = front_x - reference.body_depth_mm
+        nose_x0 = front_x - 2.0
     body = box_x(
         reference.body_depth_mm,
         reference.body_width_mm,

@@ -1,0 +1,1125 @@
+{
+  "status": "V2 fit-check prototype STEP/STL generated; provisional parameters remain",
+  "output_stage": "v2-prototype",
+  "coordinate_frame": "+X=06, -X=04, +Y=07, -Y=05, +Z=fan side; PCB bottom Z=0",
+  "part_definition": {
+    "new_parts": [
+      "upper_shell",
+      "lower_shell"
+    ],
+    "reused_part": "original round power button",
+    "upper_shell_faces": [
+      "top",
+      "06",
+      "05"
+    ],
+    "lower_shell_faces": [
+      "bottom",
+      "04",
+      "07"
+    ]
+  },
+  "face_ownership": {
+    "top": "upper",
+    "06": "upper",
+    "05": "upper",
+    "bottom": "lower",
+    "04": "lower",
+    "07": "lower"
+  },
+  "parameters": [
+    {
+      "name": "top_plate_thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "confirmed",
+      "source": "user",
+      "note": ""
+    },
+    {
+      "name": "bottom_plate_thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "confirmed",
+      "source": "user",
+      "note": ""
+    },
+    {
+      "name": "inner_z_min",
+      "value": -10.3,
+      "unit": "mm",
+      "status": "measured/generated",
+      "source": "motherboard validation",
+      "note": ""
+    },
+    {
+      "name": "inner_z_max",
+      "value": 15.3,
+      "unit": "mm",
+      "status": "measured",
+      "source": "05 side measurement",
+      "note": ""
+    },
+    {
+      "name": "outer_body_thickness",
+      "value": 28.0,
+      "unit": "mm",
+      "status": "derived",
+      "source": "25.6 mm assembly + two 1.2 mm plates",
+      "note": ""
+    },
+    {
+      "name": "inner_x_at_04_06",
+      "value": 103.0,
+      "unit": "mm",
+      "status": "user approximate measurement",
+      "source": "original case: face 04 inner wall to face 06 inner wall",
+      "note": ""
+    },
+    {
+      "name": "inner_y_at_05_07",
+      "value": 105.9,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "PCB 105.5 + 0.2 mm allowance at faces 05 and 07; original-case 110.5 mm span deliberately not copied",
+      "note": ""
+    },
+    {
+      "name": "outer_x",
+      "value": 106.6,
+      "unit": "mm",
+      "status": "derived",
+      "source": "103.0 mm measured inner X + 2 x 1.8 mm measured side wall",
+      "note": ""
+    },
+    {
+      "name": "outer_y",
+      "value": 109.5,
+      "unit": "mm",
+      "status": "derived",
+      "source": "105.9 mm compact inner Y + 2 x 1.8 mm measured side wall",
+      "note": ""
+    },
+    {
+      "name": "side_wall_thickness",
+      "value": 1.8,
+      "unit": "mm",
+      "status": "user measured",
+      "source": "original case side wall",
+      "note": "Not applied to panel aperture sizes."
+    },
+    {
+      "name": "outer_plan_corner_radius",
+      "value": 5.8,
+      "unit": "mm",
+      "status": "derived provisional",
+      "source": "inner PCB radius + side-wall thickness",
+      "note": "Constant-thickness XY offset; replaces the invalid R10 corner."
+    },
+    {
+      "name": "inner_plan_corner_radius",
+      "value": 4.0,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "photo-reconstructed motherboard corner radius",
+      "note": "Must be replaced if a physical corner measurement differs."
+    },
+    {
+      "name": "pcb_clearance_face_04",
+      "value": 2.0,
+      "unit": "mm",
+      "status": "derived provisional allocation",
+      "source": "2.0 mm maximum 04 USB projection and 103.0 mm measured inner span",
+      "note": "Inner wall coincides nominally with the maximum USB front plane; it is not a PCB locating face."
+    },
+    {
+      "name": "pcb_clearance_face_06",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "derived provisional allocation",
+      "source": "remaining 1.0 mm of the measured 103.0 mm inner span",
+      "note": "Matches the 1.0 mm USB projection; the recessed switch is not the wall datum."
+    },
+    {
+      "name": "pcb_clearance_face_05",
+      "value": 0.2,
+      "unit": "mm",
+      "status": "user-requested fit-check allowance",
+      "source": "compact non-locating clearance; original-case 110.5 mm span includes unnecessary extra space",
+      "note": ""
+    },
+    {
+      "name": "pcb_clearance_face_07",
+      "value": 0.2,
+      "unit": "mm",
+      "status": "user-requested fit-check allowance",
+      "source": "compact non-locating clearance; original-case 110.5 mm span includes unnecessary extra space",
+      "note": ""
+    },
+    {
+      "name": "original_button_through_diameter",
+      "value": 9.2,
+      "unit": "mm",
+      "status": "user measured",
+      "source": "diameter of the original button portion that passes through the panel",
+      "note": ""
+    },
+    {
+      "name": "face_06_switch_tip_to_inner_wall",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "photo-derived provisional",
+      "source": "photo 03 places the switch behind the USB-defined wall datum; positive means no switch/wall penetration",
+      "note": ""
+    },
+    {
+      "name": "connector_front_span_04_to_06",
+      "value": 103.0,
+      "unit": "mm",
+      "status": "derived cross-check",
+      "source": "PCB 100.0 + face-04 USB projection 2.0 + face-06 USB projection 1.0; equals the measured inner span",
+      "note": ""
+    },
+    {
+      "name": "mount_axes_to_face_04_inner_wall",
+      "value": [
+        7.018,
+        6.893
+      ],
+      "unit": "mm",
+      "status": "derived",
+      "source": "two negative-X PCB mounting axes; these axes fix the board against X translation",
+      "note": ""
+    },
+    {
+      "name": "mount_axes_to_face_06_inner_wall",
+      "value": [
+        5.613,
+        6.105
+      ],
+      "unit": "mm",
+      "status": "derived",
+      "source": "two positive-X PCB mounting axes; these axes fix the board against X translation",
+      "note": ""
+    },
+    {
+      "name": "button_inner_wall_to_switch_tip_range",
+      "value": [
+        0.8,
+        1.6
+      ],
+      "unit": "mm",
+      "status": "photo-derived estimated range",
+      "source": "nominal 1.2 mm with +/-0.4 mm switch-plan uncertainty; excludes unquantified USB rough-measurement error",
+      "note": ""
+    },
+    {
+      "name": "button_outer_wall_to_switch_tip_range",
+      "value": [
+        2.6,
+        3.4
+      ],
+      "unit": "mm",
+      "status": "derived estimated range",
+      "source": "1.8 mm measured wall plus the inner-wall-to-switch range; original button must bridge this axial stack",
+      "note": ""
+    },
+    {
+      "name": "face_04_max_connector_projection",
+      "value": 2.0,
+      "unit": "mm",
+      "status": "user rough measurement",
+      "source": "stacked dual USB maximum; not shared by every 04 connector",
+      "note": ""
+    },
+    {
+      "name": "face_04_other_connector_projection_proxy",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "unmeasured 04 connector noses",
+      "note": "Visual proxy only; DC, HDMI, headphone and RJ45 front projections are not individually measured."
+    },
+    {
+      "name": "face_06_usb_projection",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "user rough measurement",
+      "source": "two USB front faces; independent from face 04",
+      "note": ""
+    },
+    {
+      "name": "nominal_seam_gap",
+      "value": 0.0,
+      "unit": "mm",
+      "status": "design intent",
+      "source": "flush review geometry",
+      "note": ""
+    },
+    {
+      "name": "manufacturing_seam_clearance",
+      "value": 0.0,
+      "unit": "mm",
+      "status": "not applied",
+      "source": "no manufacturing gap is embedded in the review geometry; any future process compensation must be a separate parameter",
+      "note": ""
+    },
+    {
+      "name": "fan_intake",
+      "value": 33.5,
+      "unit": "mm diameter",
+      "status": "confirmed/derived",
+      "source": "measured fan inlet; no added clearance",
+      "note": ""
+    },
+    {
+      "name": "fin_exhaust",
+      "value": [
+        84.0,
+        7.4
+      ],
+      "unit": "mm",
+      "status": "functional envelope",
+      "source": "current fin-stack projection; grille segmentation pending",
+      "note": ""
+    },
+    {
+      "name": "internal_reinforcement_rib_height",
+      "value": 0.8,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "selected after PA12 manufacturability and collision review",
+      "note": "Added locally to the 1.2 mm inner plate faces; does not change the base plate thickness."
+    },
+    {
+      "name": "internal_reinforcement_rib_width",
+      "value": 1.5,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "reviewed sparse rib paths",
+      "note": "Upper paths bypass the blower/fins; lower paths bypass the stacked dual USB and complete motherboard reference."
+    },
+    {
+      "name": "clamp_post_od",
+      "value": 6.4,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": ""
+    },
+    {
+      "name": "upper_thread_pilot_diameter",
+      "value": 2.5,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": "Thread, heat-set insert or self-tapping strategy is not selected."
+    },
+    {
+      "name": "lower_screw_clearance_diameter",
+      "value": 3.4,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": "No screw-head counterbore or countersink is included."
+    },
+    {
+      "name": "printed_hole_locator_nose",
+      "value": false,
+      "unit": "",
+      "status": "review recommendation",
+      "source": "removed: 3.0 OD around 2.5 pilot leaves only 0.25 mm radial wall",
+      "note": ""
+    },
+    {
+      "name": "fastener_family",
+      "value": "M3-class",
+      "unit": "",
+      "status": "provisional",
+      "source": "inferred from 3.2 mm PCB hole",
+      "note": "Head, insert and thread form pending."
+    }
+  ],
+  "outer_envelope_mm": {
+    "x_04_06": 106.6,
+    "y_05_07": 109.5,
+    "z_bottom_top": 28.0,
+    "bounds": {
+      "x": [
+        -53.8,
+        52.8
+      ],
+      "y": [
+        -54.75,
+        54.75
+      ],
+      "z": [
+        -11.5,
+        16.5
+      ]
+    },
+    "plan_corner_radii": {
+      "outer_xy_mm": 5.8,
+      "inner_cavity_xy_mm": 4.0,
+      "outer_status": "derived as inner radius + side-wall thickness",
+      "inner_status": "provisional photo reconstruction of motherboard corner"
+    }
+  },
+  "assembly_sequence": [
+    "Place the upper shell exterior-top-down with its interior open toward -Z.",
+    "Lay the motherboard on the four flat upper-post shoulders; no printed feature enters a PCB hole.",
+    "Pre-insert two diagonal fasteners through the lower sleeves so their shanks/tips enter the original PCB holes and align the lower shell.",
+    "Start all four fasteners loosely, close all six butt seams, then tighten evenly from the bottom side."
+  ],
+  "clamp_chain": {
+    "axes": [
+      {
+        "name": "07_06",
+        "x_mm": 45.387,
+        "y_mm": 48.561
+      },
+      {
+        "name": "07_04",
+        "x_mm": -44.982,
+        "y_mm": 48.43
+      },
+      {
+        "name": "05_06",
+        "x_mm": 44.895,
+        "y_mm": -49.02
+      },
+      {
+        "name": "05_04",
+        "x_mm": -45.107,
+        "y_mm": -48.959
+      }
+    ],
+    "load_path": "bottom fastener -> lower sleeve -> PCB underside -> PCB -> upper post -> upper top",
+    "assembly_alignment": "two diagonal fastener shanks/tips through the original PCB holes; no printed locator nose",
+    "additional_enclosure_fastener_axes": 0
+  },
+  "seam": {
+    "path_type": "one closed six-segment boundary",
+    "continuous_tongue_or_groove": false,
+    "nominal_gap_mm": 0.0,
+    "manufacturing_clearance_applied": false,
+    "segments": [
+      {
+        "name": "top_04",
+        "faces": [
+          "top",
+          "04"
+        ],
+        "start_xyz_mm": [
+          -48.0,
+          -54.75,
+          15.3
+        ],
+        "end_xyz_mm": [
+          -48.0,
+          54.75,
+          15.3
+        ],
+        "joint": "flush butt along rounded perimeter",
+        "path_xyz_mm": [
+          [
+            -48.0,
+            -54.75,
+            15.3
+          ],
+          [
+            -48.90732,
+            -54.678592,
+            15.3
+          ],
+          [
+            -49.792299,
+            -54.466128,
+            15.3
+          ],
+          [
+            -50.633145,
+            -54.117838,
+            15.3
+          ],
+          [
+            -51.409154,
+            -53.642299,
+            15.3
+          ],
+          [
+            -52.101219,
+            -53.051219,
+            15.3
+          ],
+          [
+            -52.692299,
+            -52.359154,
+            15.3
+          ],
+          [
+            -53.167838,
+            -51.583145,
+            15.3
+          ],
+          [
+            -53.516128,
+            -50.742299,
+            15.3
+          ],
+          [
+            -53.728592,
+            -49.85732,
+            15.3
+          ],
+          [
+            -53.8,
+            -48.95,
+            15.3
+          ],
+          [
+            -53.8,
+            48.95,
+            15.3
+          ],
+          [
+            -53.728592,
+            49.85732,
+            15.3
+          ],
+          [
+            -53.516128,
+            50.742299,
+            15.3
+          ],
+          [
+            -53.167838,
+            51.583145,
+            15.3
+          ],
+          [
+            -52.692299,
+            52.359154,
+            15.3
+          ],
+          [
+            -52.101219,
+            53.051219,
+            15.3
+          ],
+          [
+            -51.409154,
+            53.642299,
+            15.3
+          ],
+          [
+            -50.633145,
+            54.117838,
+            15.3
+          ],
+          [
+            -49.792299,
+            54.466128,
+            15.3
+          ],
+          [
+            -48.90732,
+            54.678592,
+            15.3
+          ],
+          [
+            -48.0,
+            54.75,
+            15.3
+          ]
+        ]
+      },
+      {
+        "name": "top_07",
+        "faces": [
+          "top",
+          "07"
+        ],
+        "start_xyz_mm": [
+          -48.0,
+          54.75,
+          15.3
+        ],
+        "end_xyz_mm": [
+          47.0,
+          54.75,
+          15.3
+        ],
+        "joint": "flush butt along rounded perimeter",
+        "path_xyz_mm": [
+          [
+            -48.0,
+            54.75,
+            15.3
+          ],
+          [
+            47.0,
+            54.75,
+            15.3
+          ]
+        ]
+      },
+      {
+        "name": "06_07",
+        "faces": [
+          "06",
+          "07"
+        ],
+        "start_xyz_mm": [
+          47.0,
+          54.75,
+          15.3
+        ],
+        "end_xyz_mm": [
+          47.0,
+          54.75,
+          -10.3
+        ],
+        "joint": "straight tangent-plane butt; rounded corner owned by upper shell",
+        "path_xyz_mm": [
+          [
+            47.0,
+            54.75,
+            15.3
+          ],
+          [
+            47.0,
+            54.75,
+            -10.3
+          ]
+        ]
+      },
+      {
+        "name": "bottom_06",
+        "faces": [
+          "bottom",
+          "06"
+        ],
+        "start_xyz_mm": [
+          47.0,
+          54.75,
+          -10.3
+        ],
+        "end_xyz_mm": [
+          47.0,
+          -54.75,
+          -10.3
+        ],
+        "joint": "flush butt along rounded perimeter",
+        "path_xyz_mm": [
+          [
+            47.0,
+            54.75,
+            -10.3
+          ],
+          [
+            47.90732,
+            54.678592,
+            -10.3
+          ],
+          [
+            48.792299,
+            54.466128,
+            -10.3
+          ],
+          [
+            49.633145,
+            54.117838,
+            -10.3
+          ],
+          [
+            50.409154,
+            53.642299,
+            -10.3
+          ],
+          [
+            51.101219,
+            53.051219,
+            -10.3
+          ],
+          [
+            51.692299,
+            52.359154,
+            -10.3
+          ],
+          [
+            52.167838,
+            51.583145,
+            -10.3
+          ],
+          [
+            52.516128,
+            50.742299,
+            -10.3
+          ],
+          [
+            52.728592,
+            49.85732,
+            -10.3
+          ],
+          [
+            52.8,
+            48.95,
+            -10.3
+          ],
+          [
+            52.8,
+            -48.95,
+            -10.3
+          ],
+          [
+            52.728592,
+            -49.85732,
+            -10.3
+          ],
+          [
+            52.516128,
+            -50.742299,
+            -10.3
+          ],
+          [
+            52.167838,
+            -51.583145,
+            -10.3
+          ],
+          [
+            51.692299,
+            -52.359154,
+            -10.3
+          ],
+          [
+            51.101219,
+            -53.051219,
+            -10.3
+          ],
+          [
+            50.409154,
+            -53.642299,
+            -10.3
+          ],
+          [
+            49.633145,
+            -54.117838,
+            -10.3
+          ],
+          [
+            48.792299,
+            -54.466128,
+            -10.3
+          ],
+          [
+            47.90732,
+            -54.678592,
+            -10.3
+          ],
+          [
+            47.0,
+            -54.75,
+            -10.3
+          ]
+        ]
+      },
+      {
+        "name": "bottom_05",
+        "faces": [
+          "bottom",
+          "05"
+        ],
+        "start_xyz_mm": [
+          47.0,
+          -54.75,
+          -10.3
+        ],
+        "end_xyz_mm": [
+          -48.0,
+          -54.75,
+          -10.3
+        ],
+        "joint": "flush butt along rounded perimeter",
+        "path_xyz_mm": [
+          [
+            47.0,
+            -54.75,
+            -10.3
+          ],
+          [
+            -48.0,
+            -54.75,
+            -10.3
+          ]
+        ]
+      },
+      {
+        "name": "04_05",
+        "faces": [
+          "04",
+          "05"
+        ],
+        "start_xyz_mm": [
+          -48.0,
+          -54.75,
+          -10.3
+        ],
+        "end_xyz_mm": [
+          -48.0,
+          -54.75,
+          15.3
+        ],
+        "joint": "straight tangent-plane butt; rounded corner owned by lower shell",
+        "path_xyz_mm": [
+          [
+            -48.0,
+            -54.75,
+            -10.3
+          ],
+          [
+            -48.0,
+            -54.75,
+            15.3
+          ]
+        ]
+      }
+    ]
+  },
+  "corner_ownership": {
+    "06_07_rounded_corner": "upper shell owns the complete rounded arc; seam is on the straight +Y tangency",
+    "04_05_rounded_corner": "lower shell owns the complete rounded arc; seam is on the straight -Y tangency",
+    "curved_surface_split": false,
+    "tangent_seam_x_mm": {
+      "06_07": 47.0,
+      "04_05": -48.0
+    }
+  },
+  "pcb_plan_fit": {
+    "nominal_clearance_mm": {
+      "04": 2.0,
+      "06": 1.0,
+      "05": 0.2,
+      "07": 0.2
+    },
+    "inner_width_x_mm": 103.0,
+    "inner_width_y_mm": 105.9,
+    "inner_corner_radius_mm": 4.0,
+    "rule": "faces 04/06 are outward-offset continuous planar walls; all four side faces are non-locating, and the four PCB holes provide primary XY location"
+  },
+  "side_wall_construction": {
+    "04": "one continuous planar wall solid after subtracting reviewed interface apertures and fin exhaust",
+    "06": "one continuous planar wall solid after subtracting reviewed USB and power-button apertures",
+    "05": "closed wall; no side-facing connector aperture",
+    "07": "closed wall; no side-facing connector aperture",
+    "rule": "wall continuity is a manufacturing requirement; an interface projection changes its through-opening, never the PCB cavity datum"
+  },
+  "internal_reinforcement": {
+    "status": "approved and applied to V2 CAD",
+    "base_plate_thickness_mm": {
+      "top": 1.2,
+      "bottom": 1.2
+    },
+    "rib_height_mm": 0.8,
+    "rib_width_mm": 1.5,
+    "upper_path_rule": "bypass the complete blower and fin-stack XY envelopes",
+    "lower_path_rule": "bypass the deepest stacked dual USB and clear the complete motherboard reference",
+    "top_segments": [
+      {
+        "name": "top_07_cross",
+        "start_xy_mm": [
+          -52.0,
+          45.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          45.0
+        ]
+      },
+      {
+        "name": "top_06_spine",
+        "start_xy_mm": [
+          28.5,
+          -52.95
+        ],
+        "end_xy_mm": [
+          28.5,
+          52.95
+        ]
+      },
+      {
+        "name": "top_fan_upper_bypass",
+        "start_xy_mm": [
+          -26.0,
+          24.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          24.0
+        ]
+      },
+      {
+        "name": "top_fan_lower_bypass",
+        "start_xy_mm": [
+          -26.0,
+          -37.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          -37.0
+        ]
+      },
+      {
+        "name": "top_fin_upper_return",
+        "start_xy_mm": [
+          -25.5,
+          24.0
+        ],
+        "end_xy_mm": [
+          -25.5,
+          45.0
+        ]
+      },
+      {
+        "name": "top_fin_lower_return",
+        "start_xy_mm": [
+          -25.5,
+          -52.95
+        ],
+        "end_xy_mm": [
+          -25.5,
+          -37.0
+        ]
+      }
+    ],
+    "bottom_segments": [
+      {
+        "name": "bottom_04_spine",
+        "start_xy_mm": [
+          -28.5,
+          -52.95
+        ],
+        "end_xy_mm": [
+          -28.5,
+          52.95
+        ]
+      },
+      {
+        "name": "bottom_06_spine",
+        "start_xy_mm": [
+          28.5,
+          -52.95
+        ],
+        "end_xy_mm": [
+          28.5,
+          52.95
+        ]
+      },
+      {
+        "name": "bottom_05_edge",
+        "start_xy_mm": [
+          -52.0,
+          -47.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          -47.0
+        ]
+      },
+      {
+        "name": "bottom_usb_lower_bypass",
+        "start_xy_mm": [
+          -52.0,
+          -30.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          -30.0
+        ]
+      },
+      {
+        "name": "bottom_usb_upper_bypass",
+        "start_xy_mm": [
+          -52.0,
+          25.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          25.0
+        ]
+      },
+      {
+        "name": "bottom_07_edge",
+        "start_xy_mm": [
+          -52.0,
+          47.0
+        ],
+        "end_xy_mm": [
+          51.0,
+          47.0
+        ]
+      }
+    ]
+  },
+  "openings": {
+    "04": [
+      {
+        "name": "dc",
+        "face": "04",
+        "center_y_mm": 39.83,
+        "center_z_mm": -4.33,
+        "shape": "circle",
+        "width_mm": 5.9,
+        "height_mm": 5.9,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "hdmi_1",
+        "face": "04",
+        "center_y_mm": 23.75,
+        "center_z_mm": -5.02,
+        "shape": "case_hdmi_hex",
+        "width_mm": 16.5,
+        "height_mm": 5.8,
+        "dimension_source": "user measured; original-case hex profile",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 10.7,
+        "feature_height_mm": 1.9
+      },
+      {
+        "name": "headphone",
+        "face": "04",
+        "center_y_mm": 23.75,
+        "center_z_mm": 3.57,
+        "shape": "circle",
+        "width_mm": 5.4,
+        "height_mm": 5.4,
+        "dimension_source": "photo-derived; physical check pending",
+        "position_source": "04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "rj45",
+        "face": "04",
+        "center_y_mm": 3.75,
+        "center_z_mm": -3.55,
+        "shape": "rj45_main_plus_relief",
+        "width_mm": 15.0,
+        "height_mm": 10.0,
+        "dimension_source": "user measured; relief is additional",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.6,
+        "feature_width_mm": 4.5,
+        "feature_height_mm": 1.0
+      },
+      {
+        "name": "stack_dual_usb",
+        "face": "04",
+        "center_y_mm": -14.25,
+        "center_z_mm": -3.47,
+        "shape": "roundrect",
+        "width_mm": 14.0,
+        "height_mm": 14.5,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "hdmi_3",
+        "face": "04",
+        "center_y_mm": -36.08,
+        "center_z_mm": -5.27,
+        "shape": "case_hdmi_hex",
+        "width_mm": 16.5,
+        "height_mm": 5.8,
+        "dimension_source": "user measured; original-case hex profile",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 10.7,
+        "feature_height_mm": 1.9
+      },
+      {
+        "name": "fin_exhaust",
+        "shape": "continuous functional envelope; final grille pending",
+        "center_y_mm": 0.0,
+        "center_z_mm": 11.600000000000001,
+        "width_mm": 84.0,
+        "height_mm": 7.4
+      }
+    ],
+    "06": [
+      {
+        "name": "usb_05",
+        "face": "06",
+        "center_y_mm": -15.25,
+        "center_z_mm": -3.14,
+        "shape": "roundrect",
+        "width_mm": 12.8,
+        "height_mm": 5.5,
+        "dimension_source": "user measured size; shared-Z photo inference",
+        "position_source": "03 plan + 06 shared component datum",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "usb_07",
+        "face": "06",
+        "center_y_mm": 4.75,
+        "center_z_mm": -3.14,
+        "shape": "roundrect",
+        "width_mm": 12.8,
+        "height_mm": 5.5,
+        "dimension_source": "user measured size; shared-Z photo inference",
+        "position_source": "03 plan + 06 shared component datum",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "power_switch",
+        "face": "06",
+        "center_y_mm": 29.5,
+        "center_z_mm": -4.2,
+        "shape": "circle",
+        "width_mm": 9.4,
+        "height_mm": 9.4,
+        "dimension_source": "user measured; original button reused",
+        "position_source": "03 plan + 06 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      }
+    ],
+    "05": "closed",
+    "07": "closed",
+    "top": {
+      "name": "fan_intake",
+      "center_x_mm": -0.2,
+      "center_y_mm": -3.45,
+      "diameter_mm": 33.5
+    },
+    "bottom": "four fastener passages only, coincident with the original PCB axes"
+  },
+  "explicitly_unresolved": [
+    "04/06 allocation is provisionally 2.0/1.0 mm from USB projections",
+    "exact photo-derived contour of the local PCB step beside the face-06 switch; the current full PCB envelope is conservative for wall clearance",
+    "physical confirmation of the provisional PCB R4 corner reference",
+    "additional print/process compensation, if later required, must remain separate from the reviewed structural clearance",
+    "M3-class screw head, insert and thread form",
+    "reused external button cap geometry and effective travel",
+    "headphone aperture physical diameter confirmation",
+    "exact HDMI connector-front profile; generic motherboard proxy is excluded from aperture coverage",
+    "04 fin-exhaust grille segmentation inside the no-obstruction envelope"
+  ],
+  "enclosure_step_stl_generated": true
+}

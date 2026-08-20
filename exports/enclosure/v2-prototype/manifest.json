@@ -1,0 +1,651 @@
+{
+  "release_id": "v2-prototype-2026-08-21-ribbed",
+  "designation": "V2 fit-check prototype",
+  "units": "mm",
+  "coordinate_frame": "+X=06, -X=04, +Y=07, -Y=05, +Z=fan side; PCB bottom Z=0",
+  "printed_parts": [
+    "upper_shell",
+    "lower_shell"
+  ],
+  "reused_nonprinted_part": "original round power button",
+  "outer_envelope_mm": {
+    "size": [
+      106.6,
+      109.5,
+      28.0
+    ],
+    "x_bounds": [
+      -53.8,
+      52.8
+    ],
+    "y_bounds": [
+      -54.75,
+      54.75
+    ],
+    "z_bounds": [
+      -11.5,
+      16.5
+    ],
+    "outer_corner_radius": 5.8
+  },
+  "inner_plan_mm": {
+    "size": [
+      103.0,
+      105.9
+    ],
+    "pcb_clearance_by_face": {
+      "04": 2.0,
+      "06": 1.0,
+      "05": 0.2,
+      "07": 0.2
+    }
+  },
+  "clamp_interface_mm": {
+    "upper_pilot_diameter": 2.5,
+    "lower_clearance_diameter": 3.4
+  },
+  "internal_reinforcement_mm": {
+    "base_top_plate": 1.2,
+    "base_bottom_plate": 1.2,
+    "rib_width": 1.5,
+    "rib_height": 0.8,
+    "local_total_thickness": 2.0,
+    "top_rule": "bypass complete blower and fin-stack envelopes",
+    "bottom_rule": "bypass stacked dual USB and clear complete motherboard reference"
+  },
+  "stl_meshing": {
+    "linear_tolerance_mm": 0.04,
+    "angular_tolerance_rad": 0.12
+  },
+  "all_parameters": [
+    {
+      "name": "top_plate_thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "confirmed",
+      "source": "user",
+      "note": ""
+    },
+    {
+      "name": "bottom_plate_thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "confirmed",
+      "source": "user",
+      "note": ""
+    },
+    {
+      "name": "inner_z_min",
+      "value": -10.3,
+      "unit": "mm",
+      "status": "measured/generated",
+      "source": "motherboard validation",
+      "note": ""
+    },
+    {
+      "name": "inner_z_max",
+      "value": 15.3,
+      "unit": "mm",
+      "status": "measured",
+      "source": "05 side measurement",
+      "note": ""
+    },
+    {
+      "name": "outer_body_thickness",
+      "value": 28.0,
+      "unit": "mm",
+      "status": "derived",
+      "source": "25.6 mm assembly + two 1.2 mm plates",
+      "note": ""
+    },
+    {
+      "name": "inner_x_at_04_06",
+      "value": 103.0,
+      "unit": "mm",
+      "status": "user approximate measurement",
+      "source": "original case: face 04 inner wall to face 06 inner wall",
+      "note": ""
+    },
+    {
+      "name": "inner_y_at_05_07",
+      "value": 105.9,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "PCB 105.5 + 0.2 mm allowance at faces 05 and 07; original-case 110.5 mm span deliberately not copied",
+      "note": ""
+    },
+    {
+      "name": "outer_x",
+      "value": 106.6,
+      "unit": "mm",
+      "status": "derived",
+      "source": "103.0 mm measured inner X + 2 x 1.8 mm measured side wall",
+      "note": ""
+    },
+    {
+      "name": "outer_y",
+      "value": 109.5,
+      "unit": "mm",
+      "status": "derived",
+      "source": "105.9 mm compact inner Y + 2 x 1.8 mm measured side wall",
+      "note": ""
+    },
+    {
+      "name": "side_wall_thickness",
+      "value": 1.8,
+      "unit": "mm",
+      "status": "user measured",
+      "source": "original case side wall",
+      "note": "Not applied to panel aperture sizes."
+    },
+    {
+      "name": "outer_plan_corner_radius",
+      "value": 5.8,
+      "unit": "mm",
+      "status": "derived provisional",
+      "source": "inner PCB radius + side-wall thickness",
+      "note": "Constant-thickness XY offset; replaces the invalid R10 corner."
+    },
+    {
+      "name": "inner_plan_corner_radius",
+      "value": 4.0,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "photo-reconstructed motherboard corner radius",
+      "note": "Must be replaced if a physical corner measurement differs."
+    },
+    {
+      "name": "pcb_clearance_face_04",
+      "value": 2.0,
+      "unit": "mm",
+      "status": "derived provisional allocation",
+      "source": "2.0 mm maximum 04 USB projection and 103.0 mm measured inner span",
+      "note": "Inner wall coincides nominally with the maximum USB front plane; it is not a PCB locating face."
+    },
+    {
+      "name": "pcb_clearance_face_06",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "derived provisional allocation",
+      "source": "remaining 1.0 mm of the measured 103.0 mm inner span",
+      "note": "Matches the 1.0 mm USB projection; the recessed switch is not the wall datum."
+    },
+    {
+      "name": "pcb_clearance_face_05",
+      "value": 0.2,
+      "unit": "mm",
+      "status": "user-requested fit-check allowance",
+      "source": "compact non-locating clearance; original-case 110.5 mm span includes unnecessary extra space",
+      "note": ""
+    },
+    {
+      "name": "pcb_clearance_face_07",
+      "value": 0.2,
+      "unit": "mm",
+      "status": "user-requested fit-check allowance",
+      "source": "compact non-locating clearance; original-case 110.5 mm span includes unnecessary extra space",
+      "note": ""
+    },
+    {
+      "name": "original_button_through_diameter",
+      "value": 9.2,
+      "unit": "mm",
+      "status": "user measured",
+      "source": "diameter of the original button portion that passes through the panel",
+      "note": ""
+    },
+    {
+      "name": "face_06_switch_tip_to_inner_wall",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "photo-derived provisional",
+      "source": "photo 03 places the switch behind the USB-defined wall datum; positive means no switch/wall penetration",
+      "note": ""
+    },
+    {
+      "name": "connector_front_span_04_to_06",
+      "value": 103.0,
+      "unit": "mm",
+      "status": "derived cross-check",
+      "source": "PCB 100.0 + face-04 USB projection 2.0 + face-06 USB projection 1.0; equals the measured inner span",
+      "note": ""
+    },
+    {
+      "name": "mount_axes_to_face_04_inner_wall",
+      "value": [
+        7.018,
+        6.893
+      ],
+      "unit": "mm",
+      "status": "derived",
+      "source": "two negative-X PCB mounting axes; these axes fix the board against X translation",
+      "note": ""
+    },
+    {
+      "name": "mount_axes_to_face_06_inner_wall",
+      "value": [
+        5.613,
+        6.105
+      ],
+      "unit": "mm",
+      "status": "derived",
+      "source": "two positive-X PCB mounting axes; these axes fix the board against X translation",
+      "note": ""
+    },
+    {
+      "name": "button_inner_wall_to_switch_tip_range",
+      "value": [
+        0.8,
+        1.6
+      ],
+      "unit": "mm",
+      "status": "photo-derived estimated range",
+      "source": "nominal 1.2 mm with +/-0.4 mm switch-plan uncertainty; excludes unquantified USB rough-measurement error",
+      "note": ""
+    },
+    {
+      "name": "button_outer_wall_to_switch_tip_range",
+      "value": [
+        2.6,
+        3.4
+      ],
+      "unit": "mm",
+      "status": "derived estimated range",
+      "source": "1.8 mm measured wall plus the inner-wall-to-switch range; original button must bridge this axial stack",
+      "note": ""
+    },
+    {
+      "name": "face_04_max_connector_projection",
+      "value": 2.0,
+      "unit": "mm",
+      "status": "user rough measurement",
+      "source": "stacked dual USB maximum; not shared by every 04 connector",
+      "note": ""
+    },
+    {
+      "name": "face_04_other_connector_projection_proxy",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "unmeasured 04 connector noses",
+      "note": "Visual proxy only; DC, HDMI, headphone and RJ45 front projections are not individually measured."
+    },
+    {
+      "name": "face_06_usb_projection",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "user rough measurement",
+      "source": "two USB front faces; independent from face 04",
+      "note": ""
+    },
+    {
+      "name": "nominal_seam_gap",
+      "value": 0.0,
+      "unit": "mm",
+      "status": "design intent",
+      "source": "flush review geometry",
+      "note": ""
+    },
+    {
+      "name": "manufacturing_seam_clearance",
+      "value": 0.0,
+      "unit": "mm",
+      "status": "not applied",
+      "source": "no manufacturing gap is embedded in the review geometry; any future process compensation must be a separate parameter",
+      "note": ""
+    },
+    {
+      "name": "fan_intake",
+      "value": 33.5,
+      "unit": "mm diameter",
+      "status": "confirmed/derived",
+      "source": "measured fan inlet; no added clearance",
+      "note": ""
+    },
+    {
+      "name": "fin_exhaust",
+      "value": [
+        84.0,
+        7.4
+      ],
+      "unit": "mm",
+      "status": "functional envelope",
+      "source": "current fin-stack projection; grille segmentation pending",
+      "note": ""
+    },
+    {
+      "name": "internal_reinforcement_rib_height",
+      "value": 0.8,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "selected after PA12 manufacturability and collision review",
+      "note": "Added locally to the 1.2 mm inner plate faces; does not change the base plate thickness."
+    },
+    {
+      "name": "internal_reinforcement_rib_width",
+      "value": 1.5,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "reviewed sparse rib paths",
+      "note": "Upper paths bypass the blower/fins; lower paths bypass the stacked dual USB and complete motherboard reference."
+    },
+    {
+      "name": "clamp_post_od",
+      "value": 6.4,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": ""
+    },
+    {
+      "name": "upper_thread_pilot_diameter",
+      "value": 2.5,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": "Thread, heat-set insert or self-tapping strategy is not selected."
+    },
+    {
+      "name": "lower_screw_clearance_diameter",
+      "value": 3.4,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": "No screw-head counterbore or countersink is included."
+    },
+    {
+      "name": "printed_hole_locator_nose",
+      "value": false,
+      "unit": "",
+      "status": "review recommendation",
+      "source": "removed: 3.0 OD around 2.5 pilot leaves only 0.25 mm radial wall",
+      "note": ""
+    },
+    {
+      "name": "fastener_family",
+      "value": "M3-class",
+      "unit": "",
+      "status": "provisional",
+      "source": "inferred from 3.2 mm PCB hole",
+      "note": "Head, insert and thread form pending."
+    }
+  ],
+  "provisional_parameters": [
+    {
+      "name": "inner_x_at_04_06",
+      "value": 103.0,
+      "unit": "mm",
+      "status": "user approximate measurement",
+      "source": "original case: face 04 inner wall to face 06 inner wall",
+      "note": ""
+    },
+    {
+      "name": "inner_y_at_05_07",
+      "value": 105.9,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "PCB 105.5 + 0.2 mm allowance at faces 05 and 07; original-case 110.5 mm span deliberately not copied",
+      "note": ""
+    },
+    {
+      "name": "side_wall_thickness",
+      "value": 1.8,
+      "unit": "mm",
+      "status": "user measured",
+      "source": "original case side wall",
+      "note": "Not applied to panel aperture sizes."
+    },
+    {
+      "name": "outer_plan_corner_radius",
+      "value": 5.8,
+      "unit": "mm",
+      "status": "derived provisional",
+      "source": "inner PCB radius + side-wall thickness",
+      "note": "Constant-thickness XY offset; replaces the invalid R10 corner."
+    },
+    {
+      "name": "inner_plan_corner_radius",
+      "value": 4.0,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "photo-reconstructed motherboard corner radius",
+      "note": "Must be replaced if a physical corner measurement differs."
+    },
+    {
+      "name": "pcb_clearance_face_04",
+      "value": 2.0,
+      "unit": "mm",
+      "status": "derived provisional allocation",
+      "source": "2.0 mm maximum 04 USB projection and 103.0 mm measured inner span",
+      "note": "Inner wall coincides nominally with the maximum USB front plane; it is not a PCB locating face."
+    },
+    {
+      "name": "pcb_clearance_face_06",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "derived provisional allocation",
+      "source": "remaining 1.0 mm of the measured 103.0 mm inner span",
+      "note": "Matches the 1.0 mm USB projection; the recessed switch is not the wall datum."
+    },
+    {
+      "name": "pcb_clearance_face_05",
+      "value": 0.2,
+      "unit": "mm",
+      "status": "user-requested fit-check allowance",
+      "source": "compact non-locating clearance; original-case 110.5 mm span includes unnecessary extra space",
+      "note": ""
+    },
+    {
+      "name": "pcb_clearance_face_07",
+      "value": 0.2,
+      "unit": "mm",
+      "status": "user-requested fit-check allowance",
+      "source": "compact non-locating clearance; original-case 110.5 mm span includes unnecessary extra space",
+      "note": ""
+    },
+    {
+      "name": "original_button_through_diameter",
+      "value": 9.2,
+      "unit": "mm",
+      "status": "user measured",
+      "source": "diameter of the original button portion that passes through the panel",
+      "note": ""
+    },
+    {
+      "name": "face_06_switch_tip_to_inner_wall",
+      "value": 1.2,
+      "unit": "mm",
+      "status": "photo-derived provisional",
+      "source": "photo 03 places the switch behind the USB-defined wall datum; positive means no switch/wall penetration",
+      "note": ""
+    },
+    {
+      "name": "connector_front_span_04_to_06",
+      "value": 103.0,
+      "unit": "mm",
+      "status": "derived cross-check",
+      "source": "PCB 100.0 + face-04 USB projection 2.0 + face-06 USB projection 1.0; equals the measured inner span",
+      "note": ""
+    },
+    {
+      "name": "button_inner_wall_to_switch_tip_range",
+      "value": [
+        0.8,
+        1.6
+      ],
+      "unit": "mm",
+      "status": "photo-derived estimated range",
+      "source": "nominal 1.2 mm with +/-0.4 mm switch-plan uncertainty; excludes unquantified USB rough-measurement error",
+      "note": ""
+    },
+    {
+      "name": "button_outer_wall_to_switch_tip_range",
+      "value": [
+        2.6,
+        3.4
+      ],
+      "unit": "mm",
+      "status": "derived estimated range",
+      "source": "1.8 mm measured wall plus the inner-wall-to-switch range; original button must bridge this axial stack",
+      "note": ""
+    },
+    {
+      "name": "face_04_max_connector_projection",
+      "value": 2.0,
+      "unit": "mm",
+      "status": "user rough measurement",
+      "source": "stacked dual USB maximum; not shared by every 04 connector",
+      "note": ""
+    },
+    {
+      "name": "face_04_other_connector_projection_proxy",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "unmeasured 04 connector noses",
+      "note": "Visual proxy only; DC, HDMI, headphone and RJ45 front projections are not individually measured."
+    },
+    {
+      "name": "face_06_usb_projection",
+      "value": 1.0,
+      "unit": "mm",
+      "status": "user rough measurement",
+      "source": "two USB front faces; independent from face 04",
+      "note": ""
+    },
+    {
+      "name": "nominal_seam_gap",
+      "value": 0.0,
+      "unit": "mm",
+      "status": "design intent",
+      "source": "flush review geometry",
+      "note": ""
+    },
+    {
+      "name": "manufacturing_seam_clearance",
+      "value": 0.0,
+      "unit": "mm",
+      "status": "not applied",
+      "source": "no manufacturing gap is embedded in the review geometry; any future process compensation must be a separate parameter",
+      "note": ""
+    },
+    {
+      "name": "fin_exhaust",
+      "value": [
+        84.0,
+        7.4
+      ],
+      "unit": "mm",
+      "status": "functional envelope",
+      "source": "current fin-stack projection; grille segmentation pending",
+      "note": ""
+    },
+    {
+      "name": "internal_reinforcement_rib_height",
+      "value": 0.8,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "selected after PA12 manufacturability and collision review",
+      "note": "Added locally to the 1.2 mm inner plate faces; does not change the base plate thickness."
+    },
+    {
+      "name": "internal_reinforcement_rib_width",
+      "value": 1.5,
+      "unit": "mm",
+      "status": "fit-check design",
+      "source": "reviewed sparse rib paths",
+      "note": "Upper paths bypass the blower/fins; lower paths bypass the stacked dual USB and complete motherboard reference."
+    },
+    {
+      "name": "clamp_post_od",
+      "value": 6.4,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": ""
+    },
+    {
+      "name": "upper_thread_pilot_diameter",
+      "value": 2.5,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": "Thread, heat-set insert or self-tapping strategy is not selected."
+    },
+    {
+      "name": "lower_screw_clearance_diameter",
+      "value": 3.4,
+      "unit": "mm",
+      "status": "provisional",
+      "source": "review proposal",
+      "note": "No screw-head counterbore or countersink is included."
+    },
+    {
+      "name": "printed_hole_locator_nose",
+      "value": false,
+      "unit": "",
+      "status": "review recommendation",
+      "source": "removed: 3.0 OD around 2.5 pilot leaves only 0.25 mm radial wall",
+      "note": ""
+    },
+    {
+      "name": "fastener_family",
+      "value": "M3-class",
+      "unit": "",
+      "status": "provisional",
+      "source": "inferred from 3.2 mm PCB hole",
+      "note": "Head, insert and thread form pending."
+    }
+  ],
+  "explicitly_unresolved": [
+    "04/06 allocation is provisionally 2.0/1.0 mm from USB projections",
+    "exact photo-derived contour of the local PCB step beside the face-06 switch; the current full PCB envelope is conservative for wall clearance",
+    "physical confirmation of the provisional PCB R4 corner reference",
+    "additional print/process compensation, if later required, must remain separate from the reviewed structural clearance",
+    "M3-class screw head, insert and thread form",
+    "reused external button cap geometry and effective travel",
+    "headphone aperture physical diameter confirmation",
+    "exact HDMI connector-front profile; generic motherboard proxy is excluded from aperture coverage",
+    "04 fin-exhaust grille segmentation inside the no-obstruction envelope"
+  ],
+  "files": [
+    {
+      "role": "upper_shell",
+      "path": "exports/enclosure/v2-prototype/n305_v2_upper_shell.step",
+      "bytes": 313098,
+      "sha256": "d516f49cfc51869e2eadbada4004ae41eaf2ee2b9753098436e72139ed28d935"
+    },
+    {
+      "role": "upper_shell",
+      "path": "exports/enclosure/v2-prototype/n305_v2_upper_shell.stl",
+      "bytes": 297284,
+      "sha256": "fc7fd37a37d97571cd942a08e3958dbce14d76fce0778c8161521c68415a2105"
+    },
+    {
+      "role": "lower_shell",
+      "path": "exports/enclosure/v2-prototype/n305_v2_lower_shell.step",
+      "bytes": 519697,
+      "sha256": "756e21c632cc96e7ca260a89ba9fbc817d411aa2f6e53a44e7c6e19e3d067981"
+    },
+    {
+      "role": "lower_shell",
+      "path": "exports/enclosure/v2-prototype/n305_v2_lower_shell.stl",
+      "bytes": 300284,
+      "sha256": "706353ef47ad845318e1c691d8e232e6a8a349eb2ed46c7dc073b7695e0a5130"
+    },
+    {
+      "role": "enclosure_assembly",
+      "path": "exports/enclosure/v2-prototype/n305_v2_enclosure_assembly.step",
+      "bytes": 850853,
+      "sha256": "268bcb4fd01273bafea0e991110831a653d0dd6a420d18a76f8996bb704817a1"
+    },
+    {
+      "role": "enclosure_assembly",
+      "path": "exports/enclosure/v2-prototype/n305_v2_enclosure_assembly.stl",
+      "bytes": 597484,
+      "sha256": "4eb9ab9d873e491ae32fdde96f690bce35a478e4286ace3dd8f109536317e16f"
+    }
+  ],
+  "validation": "exports/enclosure/v2-prototype/validation.json",
+  "preview": "previews/enclosure/v2-prototype-parts.png"
+}

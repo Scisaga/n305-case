@@ -1,0 +1,375 @@
+{
+  "status": "nominal geometry coverage; no print/process clearance",
+  "rule": "Only measured or explicitly qualified functional profiles are compared. Unknown profiles remain not evaluated; measured apertures are never changed from a generic proxy.",
+  "results": [
+    {
+      "aperture": {
+        "name": "dc",
+        "face": "04",
+        "center_y_mm": 39.83,
+        "center_z_mm": -4.33,
+        "shape": "circle",
+        "width_mm": 5.9,
+        "height_mm": 5.9,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "dc",
+          "face": "04",
+          "aperture_name": "dc",
+          "center_y_mm": 39.83,
+          "center_z_mm": -4.33,
+          "shape": "circle",
+          "width_mm": 5.5,
+          "height_mm": 5.5,
+          "corner_radius_mm": 0.7,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 0.2,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 0.2,
+      "geometric_coverage_pass": true,
+      "review_status": "nominal coverage pass; no manufacturing clearance added"
+    },
+    {
+      "aperture": {
+        "name": "hdmi_1",
+        "face": "04",
+        "center_y_mm": 23.75,
+        "center_z_mm": -5.02,
+        "shape": "case_hdmi_hex",
+        "width_mm": 16.5,
+        "height_mm": 5.8,
+        "dimension_source": "user measured; original-case hex profile",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 10.7,
+        "feature_height_mm": 1.9
+      },
+      "targets": [],
+      "minimum_nominal_clearance_mm": null,
+      "geometric_coverage_pass": null,
+      "review_status": "authoritative original-case hex aperture retained; exact HDMI connector-front profile is not modeled, so proxy comparison is omitted"
+    },
+    {
+      "aperture": {
+        "name": "headphone",
+        "face": "04",
+        "center_y_mm": 23.75,
+        "center_z_mm": 3.57,
+        "shape": "circle",
+        "width_mm": 5.4,
+        "height_mm": 5.4,
+        "dimension_source": "photo-derived; physical check pending",
+        "position_source": "04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "headphone",
+          "face": "04",
+          "aperture_name": "headphone",
+          "center_y_mm": 23.75,
+          "center_z_mm": 3.57,
+          "shape": "circle",
+          "width_mm": 5.0,
+          "height_mm": 5.0,
+          "corner_radius_mm": 0.7,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 0.2,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 0.2,
+      "geometric_coverage_pass": true,
+      "review_status": "geometry passes against provisional connector proxy; aperture diameter pending physical check"
+    },
+    {
+      "aperture": {
+        "name": "rj45",
+        "face": "04",
+        "center_y_mm": 3.75,
+        "center_z_mm": -3.55,
+        "shape": "rj45_main_plus_relief",
+        "width_mm": 15.0,
+        "height_mm": 10.0,
+        "dimension_source": "user measured; relief is additional",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.6,
+        "feature_width_mm": 4.5,
+        "feature_height_mm": 1.0
+      },
+      "targets": [
+        {
+          "name": "rj45",
+          "face": "04",
+          "aperture_name": "rj45",
+          "center_y_mm": 3.75,
+          "center_z_mm": -2.6999999999999997,
+          "shape": "roundrect",
+          "width_mm": 14.5,
+          "height_mm": 8.3,
+          "corner_radius_mm": 0.8,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 0.0,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 0.0,
+      "geometric_coverage_pass": true,
+      "review_status": "exact functional boundary; no manufacturing clearance added by requirement"
+    },
+    {
+      "aperture": {
+        "name": "stack_dual_usb",
+        "face": "04",
+        "center_y_mm": -14.25,
+        "center_z_mm": -3.47,
+        "shape": "roundrect",
+        "width_mm": 14.0,
+        "height_mm": 14.5,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "stack_usb_upper",
+          "face": "04",
+          "aperture_name": "stack_dual_usb",
+          "center_y_mm": -14.25,
+          "center_z_mm": 0.1,
+          "shape": "roundrect",
+          "width_mm": 12.0,
+          "height_mm": 4.6,
+          "corner_radius_mm": 0.6,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 1.0,
+          "covered": true
+        },
+        {
+          "name": "stack_usb_lower",
+          "face": "04",
+          "aperture_name": "stack_dual_usb",
+          "center_y_mm": -14.25,
+          "center_z_mm": -7.04,
+          "shape": "roundrect",
+          "width_mm": 12.0,
+          "height_mm": 4.6,
+          "corner_radius_mm": 0.6,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 1.0,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 1.0,
+      "geometric_coverage_pass": true,
+      "review_status": "nominal coverage pass; no manufacturing clearance added"
+    },
+    {
+      "aperture": {
+        "name": "hdmi_3",
+        "face": "04",
+        "center_y_mm": -36.08,
+        "center_z_mm": -5.27,
+        "shape": "case_hdmi_hex",
+        "width_mm": 16.5,
+        "height_mm": 5.8,
+        "dimension_source": "user measured; original-case hex profile",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 10.7,
+        "feature_height_mm": 1.9
+      },
+      "targets": [],
+      "minimum_nominal_clearance_mm": null,
+      "geometric_coverage_pass": null,
+      "review_status": "authoritative original-case hex aperture retained; exact HDMI connector-front profile is not modeled, so proxy comparison is omitted"
+    },
+    {
+      "aperture": {
+        "name": "usb_05",
+        "face": "06",
+        "center_y_mm": -15.25,
+        "center_z_mm": -3.14,
+        "shape": "roundrect",
+        "width_mm": 12.8,
+        "height_mm": 5.5,
+        "dimension_source": "user measured size; shared-Z photo inference",
+        "position_source": "03 plan + 06 shared component datum",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "usb_05",
+          "face": "06",
+          "aperture_name": "usb_05",
+          "center_y_mm": -15.25,
+          "center_z_mm": -3.14,
+          "shape": "roundrect",
+          "width_mm": 12.0,
+          "height_mm": 4.6,
+          "corner_radius_mm": 0.6,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 0.4,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 0.4,
+      "geometric_coverage_pass": true,
+      "review_status": "nominal coverage pass; no manufacturing clearance added"
+    },
+    {
+      "aperture": {
+        "name": "usb_07",
+        "face": "06",
+        "center_y_mm": 4.75,
+        "center_z_mm": -3.14,
+        "shape": "roundrect",
+        "width_mm": 12.8,
+        "height_mm": 5.5,
+        "dimension_source": "user measured size; shared-Z photo inference",
+        "position_source": "03 plan + 06 shared component datum",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "usb_07",
+          "face": "06",
+          "aperture_name": "usb_07",
+          "center_y_mm": 4.75,
+          "center_z_mm": -3.14,
+          "shape": "roundrect",
+          "width_mm": 12.0,
+          "height_mm": 4.6,
+          "corner_radius_mm": 0.6,
+          "source": "photo-estimated body; PCB-aligned center",
+          "minimum_nominal_clearance_mm": 0.4,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 0.4,
+      "geometric_coverage_pass": true,
+      "review_status": "nominal coverage pass; no manufacturing clearance added"
+    },
+    {
+      "aperture": {
+        "name": "power_switch",
+        "face": "06",
+        "center_y_mm": 29.5,
+        "center_z_mm": -4.2,
+        "shape": "circle",
+        "width_mm": 9.4,
+        "height_mm": 9.4,
+        "dimension_source": "user measured; original button reused",
+        "position_source": "03 plan + 06 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "original_button_through_body",
+          "face": "06",
+          "aperture_name": "power_switch",
+          "center_y_mm": 29.5,
+          "center_z_mm": -4.2,
+          "shape": "circle",
+          "width_mm": 9.2,
+          "height_mm": 9.2,
+          "corner_radius_mm": 0.0,
+          "source": "user-measured original button through-body; board switch remains behind the panel",
+          "minimum_nominal_clearance_mm": 0.1,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": 0.1,
+      "geometric_coverage_pass": true,
+      "review_status": "nominal 9.4 hole covers measured 9.2 button body; switch actuator stays behind the panel and travel remains pending"
+    },
+    {
+      "aperture": {
+        "name": "fan_intake",
+        "face": "top",
+        "center_y_mm": -3.45,
+        "center_z_mm": -0.2,
+        "shape": "circle",
+        "width_mm": 33.5,
+        "height_mm": 33.5,
+        "dimension_source": "measured fan inlet; no added clearance",
+        "position_source": "PCB-aligned fan center",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "fan_inlet",
+          "face": "top",
+          "aperture_name": "fan_intake",
+          "center_y_mm": -3.45,
+          "center_z_mm": -0.2,
+          "shape": "circle",
+          "width_mm": 33.5,
+          "height_mm": 33.5,
+          "corner_radius_mm": 0.0,
+          "source": "measured fan inlet",
+          "minimum_nominal_clearance_mm": -0.0,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": -0.0,
+      "geometric_coverage_pass": true,
+      "review_status": "exact functional boundary; no manufacturing clearance added by requirement"
+    },
+    {
+      "aperture": {
+        "name": "fin_exhaust",
+        "face": "04",
+        "center_y_mm": 0.0,
+        "center_z_mm": 11.600000000000001,
+        "shape": "rectangle",
+        "width_mm": 84.0,
+        "height_mm": 7.4,
+        "dimension_source": "functional no-obstruction envelope",
+        "position_source": "fin-stack projection",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      "targets": [
+        {
+          "name": "fin_stack_outlet",
+          "face": "04",
+          "aperture_name": "fin_exhaust",
+          "center_y_mm": 0.0,
+          "center_z_mm": 11.600000000000001,
+          "shape": "rectangle",
+          "width_mm": 84.0,
+          "height_mm": 7.4,
+          "corner_radius_mm": 0.0,
+          "source": "current fin-stack projection; grille segmentation pending",
+          "minimum_nominal_clearance_mm": -0.0,
+          "covered": true
+        }
+      ],
+      "minimum_nominal_clearance_mm": -0.0,
+      "geometric_coverage_pass": true,
+      "review_status": "exact functional boundary; no manufacturing clearance added by requirement"
+    }
+  ]
+}
