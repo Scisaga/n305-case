@@ -1,61 +1,61 @@
-# N305 超薄半开放机箱 V0.1 — 参数摘要
+# N305 主板参考与外壳项目
 
-## 已生成文件
+当前已完成一套可复现的 **PCB/主板三维参考模型**。它包含 PCB、四个安装孔、04/06 接口实体、板载电源开关、相互接触的散热组件，以及与物理实体分离的保守避让体。当前没有生成外壳几何。
 
-- `n305_case_bottom.step/.stl`
-- `n305_case_top_bumper_frame.step/.stl`
-- `n305_fan_mesh_frame_A.step/.stl`
-- `n305_power_button_adjustable.step/.stl`
-- `n305_half_open_case_v01_assembly.step`
-- `n305_board_keepout_reference.step/.stl`（仅参考，不要打印）
-- `fan_mesh_cut_41p2mm.dxf`
-- `n305_half_open_case_v01.py`
+![主板风扇面三维预览](previews/reference/motherboard-isometric.png)
 
-## 外形
+## 唯一方向
 
-- 顶/底框平面包络：110.0 × 107.0 mm
-- 顶部防撞框最高面：26.8 mm
-- 裸组件实测厚度：25.6 mm
-- 风扇网框安装后最高面：26.7 mm
+正对风扇面且鳍片在下：
 
-因此完整装配的理论最大包络约为：
+```text
+                    06 / +X
+                       ↑
+          07 / +Y  ←  PCB  →  05 / -Y
+                       ↓
+                    04 / -X
 
-**110.0 × 107.0 × 26.8 mm**
+             +Z 朝风扇，PCB 底面 Z=0
+```
 
-## SSD 避让
+照片编号与观察方向见 [pics/README.md](pics/README.md)。
 
-- PCB 底面到中央底板顶面净高：9.6 mm
-- 中央区域不设置安装柱或加强筋；仅四角孔位附近有支撑
-- 参考包络按 M.2 2280：22.5 × 82 × 7 mm 建立
+## 当前有效结果
 
-## 风扇方案 A
+- [主板模型说明](docs/motherboard-reference.md)
+- [04 面 PCB 基准正投影](previews/reference/04-interface-reference.png)
+- [06 面 PCB 基准正投影](previews/reference/06-interface-reference.png)
+- [散热接触链侧视图](previews/reference/cooling-contact-path.png)
+- [风扇面正投影三维参考](previews/reference/motherboard-plan.png)
+- [01 照片风扇蜗壳轮廓证据](previews/calibration/01-blower-profile-trace.png)
+- [STEP/STL 导出说明](exports/reference/README.md)
+- [机器验证结果](exports/reference/validation.json)
 
-- 实测进风口：Ø33.5 mm
-- 网框通风孔：Ø37.5 mm
-- 金属网建议裁切：Ø41.0~41.3 mm
-- 网框厚度：0.8 mm
-- 金属网建议厚度：0.2~0.3 mm
+三维模型的主要入口是：
 
-## 固定件
+- 几何参数与构造：[src/n305_mainboard_reference.py](src/n305_mainboard_reference.py)
+- 面板机械参数：[src/n305_panel_reference.py](src/n305_panel_reference.py)
+- 构建、导出和验证：[scripts/build_motherboard_reference.py](scripts/build_motherboard_reference.py)
 
-建议使用：
+## 数据纪律
 
-- 4 × M2.5 × 20 mm 低头螺钉或沉头螺钉
-- 4 × M2.5 尼龙薄垫片（位于顶部套筒与 PCB 铜环之间）
+用户实测值和 PCB 对齐坐标高于照片视觉推断。照片只用于接口顺序、特殊轮廓和未测结构的近似，不用于反算 CAD 全局坐标。完整规则和可复用提示词已经固定在 [AGENTS.md](AGENTS.md) 与 [建模流程](docs/modeling-workflow.md) 中。
 
-底柱为 Ø2.2 mm 盲孔，按 PETG/ABS 的 M2.5 成型螺纹设计。首次锁紧请勿过度用力。
+当前 PCB 外形、安装孔、接口中心和总 Z 包络用于机械定位；连接器隐藏壳体、PCB 圆角、散热器局部细节及底面器件避让体仍是照片重建/保守近似，不能当作厂商原始 CAD。
 
-## 打印建议
+## 本地生成
 
-- 材料：PETG 验证；正式版 ASA / ABS / PA12
-- 层高：0.16~0.20 mm
-- 喷嘴：0.4 mm
-- 壁线：至少 3 道
-- 底壳：正常朝向打印
-- 顶框：平放打印
-- 风扇网框：平放打印；若 FDM 无法稳定打印 0.8 mm，可把 `FAN_GUARD_T` 改成 1.0 mm
-- 按钮：侧放或帽面朝下打印
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install -e .
+PYTHONPATH=src .venv/bin/python scripts/calibrate_photos.py
+PYTHONPATH=src .venv/bin/python scripts/calibrate_components.py
+PYTHONPATH=src .venv/bin/python scripts/render_mainboard_reference.py
+PYTHONPATH=src .venv/bin/python scripts/build_motherboard_reference.py
+```
 
-## 当前照片推导项
+最后一个命令会重新导出主板 STEP/STL、三张三维预览和 `validation.json`。校验必须确认 PCB 包络、四孔、25.6 mm 裸组件厚度、06 USB 水平轮廓和连续散热接触链；同时确认没有生成外壳实体。
 
-电源开关中心按距 PCB 左边约 32.0 mm 建模。机箱使用 12.0 × 5.5 mm 可调孔，允许按钮在孔内对准后用少量硅胶或 UV 胶固定。
+## 后续审阅门
+
+先审阅主板三维参考中的接口实体、孔位和避让体。确认后再把已审阅数据作为外壳 CAD 的直接输入；不从 PNG 像素反推开孔，也不复用旧外壳 STL/STEP。

@@ -1,0 +1,168 @@
+{
+  "status": "component-side photo evidence converted to PCB coordinates; no CAD generated",
+  "source": "pics/01-n305-mainboard-component-side-overall-width-measurement.jpg",
+  "source_resolution_px": [
+    3072,
+    4096
+  ],
+  "coordinate_frame": "+X=06, -X=04, +Y=07, -Y=05",
+  "pcb_quad_px": [
+    [
+      809,
+      913
+    ],
+    [
+      2350,
+      910
+    ],
+    [
+      2351,
+      2638
+    ],
+    [
+      810,
+      2637
+    ]
+  ],
+  "blower_outline_px": [
+    [
+      1130,
+      1505
+    ],
+    [
+      1200,
+      1505
+    ],
+    [
+      1270,
+      1560
+    ],
+    [
+      1390,
+      1490
+    ],
+    [
+      1545,
+      1450
+    ],
+    [
+      1695,
+      1465
+    ],
+    [
+      1830,
+      1535
+    ],
+    [
+      1925,
+      1655
+    ],
+    [
+      1970,
+      1810
+    ],
+    [
+      1960,
+      1970
+    ],
+    [
+      1900,
+      2110
+    ],
+    [
+      1805,
+      2220
+    ],
+    [
+      1715,
+      2305
+    ],
+    [
+      1660,
+      2330
+    ],
+    [
+      1130,
+      2330
+    ]
+  ],
+  "blower_outline_xy_mm": [
+    [
+      -29.153,
+      16.502
+    ],
+    [
+      -24.605,
+      16.497
+    ],
+    [
+      -20.06,
+      13.13
+    ],
+    [
+      -12.265,
+      17.402
+    ],
+    [
+      -2.201,
+      19.837
+    ],
+    [
+      7.531,
+      18.91
+    ],
+    [
+      16.284,
+      14.624
+    ],
+    [
+      22.439,
+      7.287
+    ],
+    [
+      25.35,
+      -2.184
+    ],
+    [
+      24.696,
+      -11.958
+    ],
+    [
+      20.801,
+      -20.51
+    ],
+    [
+      14.637,
+      -27.23
+    ],
+    [
+      8.797,
+      -32.425
+    ],
+    [
+      5.228,
+      -33.953
+    ],
+    [
+      -29.185,
+      -33.959
+    ]
+  ],
+  "fan_center_px": [
+    1576,
+    1831
+  ],
+  "fan_center_xy_mm_from_trace": [
+    -0.204,
+    -3.453
+  ],
+  "fan_center_xy_mm_model": [
+    -0.2,
+    -3.45
+  ],
+  "profile_uncertainty_mm": 1.0,
+  "model_rounding_max_error_mm": 0.0059,
+  "measured_04_06_assembly_envelope_mm": 103.4,
+  "overlay": "previews/calibration/01-blower-profile-trace.png",
+  "warning": "the CAD model reads the reviewed millimetre profile, never these PNG pixels"
+}

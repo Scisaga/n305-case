@@ -1,0 +1,303 @@
+{
+  "status": "04 and 06 original-case photo traces only",
+  "original_case_04": {
+    "source": "pics/机箱盒子04.jpg",
+    "source_resolution_px": [
+      4096,
+      3072
+    ],
+    "view": "original case exterior 04 face; left is 07, right is 05",
+    "scope": "photo-plane aperture outlines and local size grids only",
+    "warning": "local grids do not establish a shared motherboard coordinate system or PCB datum",
+    "features": [
+      {
+        "name": "dc",
+        "bbox_px": [
+          602,
+          1890,
+          801,
+          2089
+        ],
+        "shape": "circle",
+        "confirmed_size_mm": [
+          5.9,
+          5.9
+        ],
+        "local_grid_px_per_mm": [
+          33.7288,
+          33.7288
+        ],
+        "raw_crop": "previews/calibration/original-case-04-dc-raw.png"
+      },
+      {
+        "name": "hdmi_1",
+        "bbox_px": [
+          953,
+          1908,
+          1465,
+          2095
+        ],
+        "shape": "photo_polygon",
+        "confirmed_size_mm": [
+          16.5,
+          5.8
+        ],
+        "vertices_px": [
+          [
+            1050,
+            1908
+          ],
+          [
+            1383,
+            1908
+          ],
+          [
+            1465,
+            1978
+          ],
+          [
+            1465,
+            2095
+          ],
+          [
+            953,
+            2095
+          ],
+          [
+            953,
+            1978
+          ]
+        ],
+        "local_grid_px_per_mm": [
+          31.0303,
+          32.2414
+        ],
+        "raw_crop": "previews/calibration/original-case-04-hdmi_1-raw.png"
+      },
+      {
+        "name": "headphone",
+        "bbox_px": [
+          1132,
+          1625,
+          1301,
+          1797
+        ],
+        "shape": "circle",
+        "photo_derived_size_mm": [
+          5.4,
+          5.4
+        ],
+        "scale_source": "neighboring HDMI 1 image scale; physical check pending",
+        "photo_measurement_mm": [
+          5.45,
+          5.33
+        ],
+        "equivalent_diameter_mm": 5.39,
+        "local_grid_px_per_mm": [
+          31.0303,
+          32.2414
+        ],
+        "raw_crop": "previews/calibration/original-case-04-headphone-raw.png"
+      },
+      {
+        "name": "rj45",
+        "bbox_px": [
+          1586,
+          1785,
+          2047,
+          2093
+        ],
+        "shape": "rj45_main_plus_relief",
+        "confirmed_size_mm": [
+          15.0,
+          10.0
+        ],
+        "relief_size_mm": [
+          4.5,
+          1.0
+        ],
+        "local_grid_px_per_mm": [
+          30.7333,
+          30.8
+        ],
+        "raw_crop": "previews/calibration/original-case-04-rj45-raw.png"
+      },
+      {
+        "name": "stack_dual_usb",
+        "bbox_px": [
+          2179,
+          1698,
+          2614,
+          2150
+        ],
+        "shape": "roundrect",
+        "confirmed_size_mm": [
+          14.0,
+          14.5
+        ],
+        "corner_radius_mm": 0.7,
+        "local_grid_px_per_mm": [
+          31.0714,
+          31.1724
+        ],
+        "raw_crop": "previews/calibration/original-case-04-stack_dual_usb-raw.png"
+      },
+      {
+        "name": "hdmi_3",
+        "bbox_px": [
+          2778,
+          1925,
+          3308,
+          2113
+        ],
+        "shape": "photo_polygon",
+        "confirmed_size_mm": [
+          16.5,
+          5.8
+        ],
+        "vertices_px": [
+          [
+            2867,
+            1925
+          ],
+          [
+            3211,
+            1925
+          ],
+          [
+            3308,
+            1990
+          ],
+          [
+            3308,
+            2113
+          ],
+          [
+            2778,
+            2113
+          ],
+          [
+            2778,
+            1990
+          ]
+        ],
+        "local_grid_px_per_mm": [
+          32.1212,
+          32.4138
+        ],
+        "raw_crop": "previews/calibration/original-case-04-hdmi_3-raw.png"
+      }
+    ],
+    "overlay": "previews/calibration/original-case-04-1mm-grid.png",
+    "rj45_semantics": "15 x 10 mm is the main window; 4.5 x 1 mm is an additional bottom relief"
+  },
+  "original_case_06": {
+    "source": "pics/机箱盒子06.jpg",
+    "source_resolution_px": [
+      4096,
+      3072
+    ],
+    "view": "original case exterior 06 face; left/right refer only to this photograph",
+    "scope": "photo-plane aperture outlines and local size grids only",
+    "warning": "local grids do not establish a shared motherboard coordinate system or PCB datum",
+    "features": [
+      {
+        "name": "usb_left",
+        "bbox_px": [
+          1235,
+          1674,
+          1650,
+          1865
+        ],
+        "shape": "photo_roundrect",
+        "confirmed_size_mm": [
+          12.8,
+          5.5
+        ],
+        "vertices_px": [
+          [
+            1235,
+            1674
+          ],
+          [
+            1650,
+            1680
+          ],
+          [
+            1649,
+            1865
+          ],
+          [
+            1235,
+            1860
+          ]
+        ],
+        "corner_radius_px": 24.0,
+        "local_grid_px_per_mm": [
+          32.4219,
+          34.7273
+        ],
+        "raw_crop": "previews/calibration/original-case-06-usb_left-raw.png"
+      },
+      {
+        "name": "usb_right",
+        "bbox_px": [
+          1851,
+          1689,
+          2262,
+          1876
+        ],
+        "shape": "photo_roundrect",
+        "confirmed_size_mm": [
+          12.8,
+          5.5
+        ],
+        "vertices_px": [
+          [
+            1851,
+            1689
+          ],
+          [
+            2262,
+            1698
+          ],
+          [
+            2262,
+            1876
+          ],
+          [
+            1851,
+            1868
+          ]
+        ],
+        "corner_radius_px": 24.0,
+        "local_grid_px_per_mm": [
+          32.1094,
+          34.0
+        ],
+        "raw_crop": "previews/calibration/original-case-06-usb_right-raw.png"
+      },
+      {
+        "name": "power_switch",
+        "bbox_px": [
+          2722,
+          1657,
+          3032,
+          1962
+        ],
+        "shape": "circle",
+        "confirmed_size_mm": [
+          9.4,
+          9.4
+        ],
+        "local_grid_px_per_mm": [
+          32.9787,
+          32.4468
+        ],
+        "raw_crop": "previews/calibration/original-case-06-power_switch-raw.png"
+      }
+    ],
+    "overlay": "previews/calibration/original-case-06-1mm-grid.png",
+    "position_semantics": "USB openings retain separate photo-plane vertical positions; no common PCB baseline"
+  }
+}

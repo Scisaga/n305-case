@@ -1,0 +1,150 @@
+{
+  "status": "orthographic CAD-input review baseline; no print clearance",
+  "coordinate_frame": {
+    "Y": "+Y points toward 07; -Y points toward 05",
+    "Z": "Z=0 is PCB bottom; +Z points toward fan side",
+    "face_04_exterior_screen": "left=07/+Y, right=05/-Y",
+    "face_06_exterior_screen": "left=05/-Y, right=07/+Y"
+  },
+  "pcb_edge_reference_mm": {
+    "span_y": 105.5,
+    "thickness_z": 1.5,
+    "y_min": -52.75,
+    "y_max": 52.75,
+    "z_bottom": 0.0,
+    "z_top": 1.5
+  },
+  "position_review_uncertainty_mm": 0.7,
+  "faces": {
+    "04": [
+      {
+        "name": "dc",
+        "face": "04",
+        "center_y_mm": 39.83,
+        "center_z_mm": -4.33,
+        "shape": "circle",
+        "width_mm": 5.9,
+        "height_mm": 5.9,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "hdmi_1",
+        "face": "04",
+        "center_y_mm": 23.75,
+        "center_z_mm": -5.02,
+        "shape": "case_hdmi_hex",
+        "width_mm": 16.5,
+        "height_mm": 5.8,
+        "dimension_source": "user measured; original-case hex profile",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 10.7,
+        "feature_height_mm": 1.9
+      },
+      {
+        "name": "headphone",
+        "face": "04",
+        "center_y_mm": 23.75,
+        "center_z_mm": 3.57,
+        "shape": "circle",
+        "width_mm": 5.4,
+        "height_mm": 5.4,
+        "dimension_source": "photo-derived; physical check pending",
+        "position_source": "04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "rj45",
+        "face": "04",
+        "center_y_mm": 3.75,
+        "center_z_mm": -3.55,
+        "shape": "rj45_main_plus_relief",
+        "width_mm": 15.0,
+        "height_mm": 10.0,
+        "dimension_source": "user measured; relief is additional",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.6,
+        "feature_width_mm": 4.5,
+        "feature_height_mm": 1.0
+      },
+      {
+        "name": "stack_dual_usb",
+        "face": "04",
+        "center_y_mm": -14.25,
+        "center_z_mm": -3.47,
+        "shape": "roundrect",
+        "width_mm": 14.0,
+        "height_mm": 14.5,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "hdmi_3",
+        "face": "04",
+        "center_y_mm": -36.08,
+        "center_z_mm": -5.27,
+        "shape": "case_hdmi_hex",
+        "width_mm": 16.5,
+        "height_mm": 5.8,
+        "dimension_source": "user measured; original-case hex profile",
+        "position_source": "03 plan + 04 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 10.7,
+        "feature_height_mm": 1.9
+      }
+    ],
+    "06": [
+      {
+        "name": "usb_05",
+        "face": "06",
+        "center_y_mm": -15.25,
+        "center_z_mm": -3.09,
+        "shape": "roundrect",
+        "width_mm": 12.8,
+        "height_mm": 5.5,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 06 measured side calibration",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "usb_07",
+        "face": "06",
+        "center_y_mm": 4.75,
+        "center_z_mm": -3.19,
+        "shape": "roundrect",
+        "width_mm": 12.8,
+        "height_mm": 5.5,
+        "dimension_source": "user measured",
+        "position_source": "03 plan + 06 measured side calibration",
+        "corner_radius_mm": 0.7,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      },
+      {
+        "name": "power_switch",
+        "face": "06",
+        "center_y_mm": 29.5,
+        "center_z_mm": -4.2,
+        "shape": "circle",
+        "width_mm": 9.4,
+        "height_mm": 9.4,
+        "dimension_source": "user measured; original button reused",
+        "position_source": "03 plan + 06 measured side calibration",
+        "corner_radius_mm": 0.0,
+        "feature_width_mm": 0.0,
+        "feature_height_mm": 0.0
+      }
+    ]
+  }
+}

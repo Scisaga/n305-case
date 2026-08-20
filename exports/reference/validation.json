@@ -1,0 +1,626 @@
+{
+  "scope": "motherboard reference only; no enclosure geometry generated",
+  "coordinate_frame": "+X=06, -X=04, +Y=07, -Y=05, +Z=fan side; PCB bottom Z=0",
+  "data_sources": {
+    "workflow": "AGENTS.md and docs/modeling-workflow.md",
+    "panel_centers": "src/n305_panel_reference.py",
+    "measured_photo_index": "pics/README.md",
+    "component_plan_trace": "docs/component-calibration.json",
+    "geometry": "src/n305_mainboard_reference.py"
+  },
+  "pcb": {
+    "size_mm": [
+      100.0,
+      105.5,
+      1.5
+    ],
+    "corner_radius_mm": 4.0,
+    "mount_hole_diameter_mm": 3.2,
+    "mount_hole_position_uncertainty_mm": 0.35,
+    "mount_holes": [
+      {
+        "name": "07_06",
+        "x_mm": 45.387,
+        "y_mm": 48.561
+      },
+      {
+        "name": "07_04",
+        "x_mm": -44.982,
+        "y_mm": 48.43
+      },
+      {
+        "name": "05_06",
+        "x_mm": 44.895,
+        "y_mm": -49.02
+      },
+      {
+        "name": "05_04",
+        "x_mm": -45.107,
+        "y_mm": -48.959
+      }
+    ]
+  },
+  "plan_envelope": {
+    "pcb_x_mm": 100.0,
+    "assembly_04_06_mm": 103.4,
+    "nominal_projection_each_face_mm": 1.7,
+    "generated_bounds_x_mm": [
+      -51.7,
+      51.7
+    ]
+  },
+  "z_stack": {
+    "lowest_z_mm": -10.25,
+    "fan_top_z_mm": 15.3,
+    "bare_assembly_thickness_mm": 25.55,
+    "generated_bounds_z_mm": [
+      -10.3,
+      15.3
+    ],
+    "generated_thickness_mm": 25.6
+  },
+  "fan": {
+    "center_xy_mm": [
+      -0.2,
+      -3.45
+    ],
+    "inlet_diameter_mm": 33.5,
+    "volute_profile_xy_mm": [
+      [
+        -29.15,
+        16.5
+      ],
+      [
+        -24.61,
+        16.5
+      ],
+      [
+        -20.06,
+        13.13
+      ],
+      [
+        -12.26,
+        17.4
+      ],
+      [
+        -2.2,
+        19.84
+      ],
+      [
+        7.53,
+        18.91
+      ],
+      [
+        16.28,
+        14.62
+      ],
+      [
+        22.44,
+        7.29
+      ],
+      [
+        25.35,
+        -2.18
+      ],
+      [
+        24.7,
+        -11.96
+      ],
+      [
+        20.8,
+        -20.51
+      ],
+      [
+        14.64,
+        -27.23
+      ],
+      [
+        8.8,
+        -32.43
+      ],
+      [
+        5.23,
+        -33.95
+      ],
+      [
+        -29.18,
+        -33.96
+      ]
+    ],
+    "profile_uncertainty_mm": 1.0,
+    "blade_count": 32,
+    "two_hole_top_bar": "not modeled; 05 side view does not support it above the blower"
+  },
+  "interfaces": [
+    {
+      "name": "dc",
+      "face": "04",
+      "center_y_mm": 39.83,
+      "body_center_z_mm": -4.33,
+      "nose_shape": "circle",
+      "nose_width_mm": 5.5,
+      "nose_height_mm": 5.5,
+      "body_width_mm": 10.5,
+      "body_height_mm": 10.5,
+      "body_depth_mm": 13.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.7,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "hdmi_1",
+      "face": "04",
+      "center_y_mm": 23.75,
+      "body_center_z_mm": -5.02,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 14.0,
+      "nose_height_mm": 4.8,
+      "body_width_mm": 15.0,
+      "body_height_mm": 6.4,
+      "body_depth_mm": 12.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.6,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "headphone",
+      "face": "04",
+      "center_y_mm": 23.75,
+      "body_center_z_mm": 3.57,
+      "nose_shape": "circle",
+      "nose_width_mm": 5.0,
+      "nose_height_mm": 5.0,
+      "body_width_mm": 8.0,
+      "body_height_mm": 8.0,
+      "body_depth_mm": 11.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.7,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "rj45",
+      "face": "04",
+      "center_y_mm": 3.75,
+      "body_center_z_mm": -3.55,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 14.5,
+      "nose_height_mm": 8.3,
+      "body_width_mm": 16.5,
+      "body_height_mm": 13.5,
+      "body_depth_mm": 20.0,
+      "nose_center_z_offset_mm": 0.85,
+      "nose_corner_radius_mm": 0.8,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "stack_usb_upper",
+      "face": "04",
+      "center_y_mm": -14.25,
+      "body_center_z_mm": 0.1,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 12.0,
+      "nose_height_mm": 4.6,
+      "body_width_mm": 14.0,
+      "body_height_mm": 6.5,
+      "body_depth_mm": 16.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.6,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "stack_usb_lower",
+      "face": "04",
+      "center_y_mm": -14.25,
+      "body_center_z_mm": -7.04,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 12.0,
+      "nose_height_mm": 4.6,
+      "body_width_mm": 14.0,
+      "body_height_mm": 6.5,
+      "body_depth_mm": 16.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.6,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "hdmi_3",
+      "face": "04",
+      "center_y_mm": -36.08,
+      "body_center_z_mm": -5.27,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 14.0,
+      "nose_height_mm": 4.8,
+      "body_width_mm": 15.0,
+      "body_height_mm": 6.4,
+      "body_depth_mm": 12.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.6,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "usb_05",
+      "face": "06",
+      "center_y_mm": -15.25,
+      "body_center_z_mm": -3.09,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 12.0,
+      "nose_height_mm": 4.6,
+      "body_width_mm": 14.0,
+      "body_height_mm": 6.5,
+      "body_depth_mm": 16.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.6,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    },
+    {
+      "name": "usb_07",
+      "face": "06",
+      "center_y_mm": 4.75,
+      "body_center_z_mm": -3.19,
+      "nose_shape": "roundrect",
+      "nose_width_mm": 12.0,
+      "nose_height_mm": 4.6,
+      "body_width_mm": 14.0,
+      "body_height_mm": 6.5,
+      "body_depth_mm": 16.0,
+      "nose_center_z_offset_mm": 0.0,
+      "nose_corner_radius_mm": 0.6,
+      "confidence": "photo-estimated body; PCB-aligned center"
+    }
+  ],
+  "board_switch": {
+    "face": "06",
+    "center_y_mm": 29.5,
+    "center_z_mm": -4.2
+  },
+  "checks": {
+    "pcb_bounds_match_measured": true,
+    "mount_hole_count_is_four": true,
+    "assembly_x_envelope_matches_103p4": true,
+    "bare_assembly_thickness_matches_25p6": true,
+    "cooling_contact_path_complete": true,
+    "blower_is_asymmetric_photo_trace": true,
+    "fan_rotor_has_32_blades": true,
+    "unsupported_fan_top_bar_removed": true,
+    "face_04_order_and_semantics_preserved": true,
+    "face_06_apertures_match_measured": true,
+    "face_06_usb_profiles_horizontal": true,
+    "enclosure_geometry_generated": false
+  },
+  "contact_checks": {
+    "pcb_to_cold_plate_distance_mm": 0.0,
+    "pcb_top_contact_probe_intersection_mm3": 14.28531,
+    "cold_plate_to_deck_distance_mm": 0.0,
+    "cold_plate_deck_overlap_mm3": 31.627433,
+    "deck_to_blower_distance_mm": 0.0,
+    "deck_blower_overlap_mm3": 167.806013,
+    "deck_to_heat_bridge_distance_mm": 0.0,
+    "deck_heat_bridge_overlap_mm3": 237.81962,
+    "heat_bridge_to_fins_distance_mm": 0.0,
+    "heat_bridge_fins_overlap_mm3": 241.56325
+  },
+  "parts": {
+    "pcb": {
+      "solids": 1,
+      "volume_mm3": 15756.143,
+      "bounds_mm": {
+        "x": [
+          -50.0,
+          50.0
+        ],
+        "y": [
+          -52.75,
+          52.75
+        ],
+        "z": [
+          0.0,
+          1.5
+        ]
+      },
+      "size_mm": [
+        100.0,
+        105.5,
+        1.5
+      ]
+    },
+    "connectors": {
+      "solids": 9,
+      "volume_mm3": 14720.25,
+      "bounds_mm": {
+        "x": [
+          -51.7,
+          51.7
+        ],
+        "y": [
+          -43.58,
+          45.08
+        ],
+        "z": [
+          -10.3,
+          7.57
+        ]
+      },
+      "size_mm": [
+        103.4,
+        88.66,
+        17.87
+      ]
+    },
+    "switch": {
+      "solids": 1,
+      "volume_mm3": 103.031,
+      "bounds_mm": {
+        "x": [
+          45.7,
+          51.4
+        ],
+        "y": [
+          27.25,
+          31.75
+        ],
+        "z": [
+          -6.45,
+          -1.95
+        ]
+      },
+      "size_mm": [
+        5.7,
+        4.5,
+        4.5
+      ]
+    },
+    "cold_plate_support": {
+      "solids": 1,
+      "volume_mm3": 3692.011,
+      "bounds_mm": {
+        "x": [
+          -22.5,
+          5.5
+        ],
+        "y": [
+          -8.5,
+          17.5
+        ],
+        "z": [
+          1.5,
+          9.65
+        ]
+      },
+      "size_mm": [
+        28.0,
+        26.0,
+        8.15
+      ]
+    },
+    "cooling_deck": {
+      "solids": 1,
+      "volume_mm3": 2431.53,
+      "bounds_mm": {
+        "x": [
+          -29.18,
+          25.523
+        ],
+        "y": [
+          -33.96,
+          19.92
+        ],
+        "z": [
+          9.55,
+          10.5
+        ]
+      },
+      "size_mm": [
+        54.703,
+        53.88,
+        0.95
+      ]
+    },
+    "blower_shell": {
+      "solids": 1,
+      "volume_mm3": 8222.495,
+      "bounds_mm": {
+        "x": [
+          -29.18,
+          25.523
+        ],
+        "y": [
+          -33.96,
+          19.92
+        ],
+        "z": [
+          10.4,
+          15.3
+        ]
+      },
+      "size_mm": [
+        54.703,
+        53.88,
+        4.9
+      ]
+    },
+    "fan_rotor": {
+      "solids": 33,
+      "volume_mm3": 521.206,
+      "bounds_mm": {
+        "x": [
+          -16.584,
+          16.184
+        ],
+        "y": [
+          -19.834,
+          12.934
+        ],
+        "z": [
+          14.15,
+          15.1
+        ]
+      },
+      "size_mm": [
+        32.769,
+        32.769,
+        0.95
+      ]
+    },
+    "heat_bridge": {
+      "solids": 1,
+      "volume_mm3": 1250.0,
+      "bounds_mm": {
+        "x": [
+          -34.0,
+          -24.0
+        ],
+        "y": [
+          -32.0,
+          18.0
+        ],
+        "z": [
+          8.25,
+          10.75
+        ]
+      },
+      "size_mm": [
+        10.0,
+        50.0,
+        2.5
+      ]
+    },
+    "fins": {
+      "solids": 30,
+      "volume_mm3": 4795.56,
+      "bounds_mm": {
+        "x": [
+          -51.7,
+          -29.7
+        ],
+        "y": [
+          -42.35,
+          42.35
+        ],
+        "z": [
+          7.9,
+          15.3
+        ]
+      },
+      "size_mm": [
+        22.0,
+        84.7,
+        7.4
+      ]
+    },
+    "cooling_assembly": {
+      "solids": 67,
+      "volume_mm3": 20912.745,
+      "bounds_mm": {
+        "x": [
+          -51.7,
+          25.523
+        ],
+        "y": [
+          -42.35,
+          42.35
+        ],
+        "z": [
+          1.5,
+          15.3
+        ]
+      },
+      "size_mm": [
+        77.223,
+        84.7,
+        13.8
+      ]
+    },
+    "motherboard_assembly": {
+      "solids": 78,
+      "volume_mm3": 51492.126,
+      "bounds_mm": {
+        "x": [
+          -51.7,
+          51.7
+        ],
+        "y": [
+          -52.75,
+          52.75
+        ],
+        "z": [
+          -10.3,
+          15.3
+        ]
+      },
+      "size_mm": [
+        103.4,
+        105.5,
+        25.6
+      ]
+    },
+    "cooling_keepout": {
+      "solids": 2,
+      "volume_mm3": 60824.059,
+      "bounds_mm": {
+        "x": [
+          -51.7,
+          25.523
+        ],
+        "y": [
+          -42.0,
+          42.0
+        ],
+        "z": [
+          1.5,
+          15.3
+        ]
+      },
+      "size_mm": [
+        77.223,
+        84.0,
+        13.8
+      ]
+    },
+    "underside_keepouts": {
+      "solids": 3,
+      "volume_mm3": 27325.6,
+      "bounds_mm": {
+        "x": [
+          -34.0,
+          34.0
+        ],
+        "y": [
+          -40.0,
+          48.0
+        ],
+        "z": [
+          -7.0,
+          0.0
+        ]
+      },
+      "size_mm": [
+        68.0,
+        88.0,
+        7.0
+      ]
+    },
+    "mount_axes": {
+      "solids": 4,
+      "volume_mm3": 92.834,
+      "bounds_mm": {
+        "x": [
+          -45.607,
+          45.887
+        ],
+        "y": [
+          -49.52,
+          49.061
+        ],
+        "z": [
+          -12.25,
+          17.3
+        ]
+      },
+      "size_mm": [
+        91.494,
+        98.581,
+        29.55
+      ]
+    }
+  }
+}
